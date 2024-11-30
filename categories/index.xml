@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Tariq Baater</title>
+    <title>Categories on My New Blog Site</title>
     <link>https://tariqbaater.github.io/categories/</link>
-    <description>Recent content in Categories on Tariq Baater</description>
+    <description>Recent content in Categories on My New Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://tariqbaater.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://tariqbaater.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

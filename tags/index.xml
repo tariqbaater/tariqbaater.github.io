@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Tariq Baater</title>
+    <title>Tags on My New Blog Site</title>
     <link>https://tariqbaater.github.io/tags/</link>
-    <description>Recent content in Tags on Tariq Baater</description>
+    <description>Recent content in Tags on My New Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Sat, 30 Nov 2024 20:10:23 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Nov 2024 21:10:55 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cybersecurity</title>
       <link>https://tariqbaater.github.io/tags/cybersecurity/</link>
-      <pubDate>Sat, 30 Nov 2024 20:10:23 +0300</pubDate>
+      <pubDate>Sat, 30 Nov 2024 21:10:55 +0300</pubDate>
       
       <guid>https://tariqbaater.github.io/tags/cybersecurity/</guid>
       <description></description>
@@ -20,29 +20,9 @@
     <item>
       <title>Thm</title>
       <link>https://tariqbaater.github.io/tags/thm/</link>
-      <pubDate>Sat, 30 Nov 2024 20:10:23 +0300</pubDate>
+      <pubDate>Sat, 30 Nov 2024 21:10:55 +0300</pubDate>
       
       <guid>https://tariqbaater.github.io/tags/thm/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://tariqbaater.github.io/tags/blog/</link>
-      <pubDate>Sat, 30 Nov 2024 19:16:51 +0300</pubDate>
-      
-      <guid>https://tariqbaater.github.io/tags/blog/</guid>
-      <description></description>
-      <content></content>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://tariqbaater.github.io/tags/hugo/</link>
-      <pubDate>Sat, 30 Nov 2024 19:16:51 +0300</pubDate>
-      
-      <guid>https://tariqbaater.github.io/tags/hugo/</guid>
       <description></description>
       <content></content>
     </item>

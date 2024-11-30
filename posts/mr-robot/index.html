@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
   
-    <title>Cybersecurity :: My New Blog Site</title>
+    <title>Mr Robot :: My New Blog Site</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
+<meta name="description" content="THM CTF Writeup" />
+<meta name="keywords" content=", " />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="https://tariqbaater.github.io/tags/cybersecurity/" />
+<link rel="canonical" href="https://tariqbaater.github.io/posts/mr-robot/" />
 
 
 
@@ -74,22 +74,24 @@
 
 
 <meta property="og:locale" content="en" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="Cybersecurity">
-<meta property="og:description" content="" />
-<meta property="og:url" content="https://tariqbaater.github.io/tags/cybersecurity/" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Mr Robot">
+<meta property="og:description" content="THM CTF Writeup" />
+<meta property="og:url" content="https://tariqbaater.github.io/posts/mr-robot/" />
 <meta property="og:site_name" content="My New Blog Site" />
 
-  <meta property="og:image" content="https://tariqbaater.github.io/og-image.png">
+  
+  
+  <meta property="og:image" content="https://tariqbaater.github.io/">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 
 
+  <meta property="article:published_time" content="2024-11-30 21:10:55 &#43;0300 &#43;03" />
 
 
 
-  <link href="/tags/cybersecurity/index.xml" rel="alternate" type="application/rss+xml" title="My New Blog Site" />
 
 
 
@@ -124,51 +126,45 @@
 
   <div class="content">
     
-  <h1>Posts for: #Cybersecurity</h1>
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://tariqbaater.github.io/posts/mr-robot/">Mr Robot</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-11-30</time><span class="post-author">tariqbaater</span><span class="post-reading-time">1 min read (73 words)</span></div>
+
   
-  <div class="posts">
-    
-      <article class="post on-list">
-        <h1 class="post-title">
-          <a href="https://tariqbaater.github.io/posts/mr-robot/">Mr Robot</a>
-        </h1>
-        <div class="post-meta"><time class="post-date">2024-11-30</time><span class="post-author">tariqbaater</span></div>
-
-        
-          <span class="post-tags">
-            
-            #<a href="https://tariqbaater.github.io/tags/thm/">thm</a>&nbsp;
-            
-            #<a href="https://tariqbaater.github.io/tags/cybersecurity/">cybersecurity</a>&nbsp;
-            
-          </span>
-        
-
-        
+    <span class="post-tags">
+      
+      #<a href="https://tariqbaater.github.io/tags/thm/">thm</a>&nbsp;
+      
+      #<a href="https://tariqbaater.github.io/tags/cybersecurity/">cybersecurity</a>&nbsp;
+      
+    </span>
+  
+  
 
 
-        <div class="post-content">
-          
-            <p>THM CTF Writeup</p>
-          
-        </div>
+  
 
-        
-          <div>
-            <a class="read-more button inline" href="/posts/mr-robot/"></a>
-          </div>
-        
-      </article>
+  <div class="post-content"><div>
+        <p>This is the writeup for the Mr Robot CTF challenge.</p>
+<h2 id="solution">Solution<a href="#solution" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>First we start by enumarating the ports</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p- -Pn -T4 &lt;IP&gt; | tee ports.txt
+</span></span></code></pre></div><p>Then we run the nmap script to find more information on the ports discovered.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -sC -sV -p &lt;PORT&gt; -T4 &lt;IP&gt; | tee ports.txt
+</span></span></code></pre></div><p>It is good practice to run gobuster scan to find directories while busy enumarting the box further.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gobuster dir -u &lt;URL&gt; -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+</span></span></code></pre></div>
+      </div></div>
+
+  
+
+  
     
 
-    <div class="pagination">
-  <div class="pagination__buttons">
-    
-    
-  </div>
-</div>
-
-  </div>
+  
+</article>
 
   </div>
 
