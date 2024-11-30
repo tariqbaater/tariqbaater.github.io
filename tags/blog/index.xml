@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Tariq Baater</title>
+    <link>https://tariqbaater.github.io/tags/blog/</link>
+    <description>Recent content in Blog on Tariq Baater</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 30 Nov 2024 19:16:51 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://tariqbaater.github.io/posts/my-first-post/</link>
+      <pubDate>Sat, 30 Nov 2024 19:16:51 +0300</pubDate>
+      
+      <guid>https://tariqbaater.github.io/posts/my-first-post/</guid>
+      <description>&lt;p&gt;My first post with &lt;strong&gt;&lt;em&gt;hugo&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <content>&lt;p&gt;My first post with &lt;strong&gt;&lt;em&gt;hugo&lt;/em&gt;&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;():
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    print(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hello World!&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;main()
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content>
+    </item>
+    
+  </channel>
+</rss>
