@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cybersecurity on Tariq Baater</title>
-    <link>https://tariqbaater.github.io/tags/cybersecurity/</link>
+    <link>http://localhost:1313/tags/cybersecurity/</link>
     <description>Recent content in Cybersecurity on Tariq Baater</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Nov 2024 20:10:23 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Nov 2024 20:10:23 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mr.Robot THM Write Up</title>
-      <link>https://tariqbaater.github.io/posts/write-up/</link>
+      <link>http://localhost:1313/posts/write-up/</link>
       <pubDate>Sat, 30 Nov 2024 20:10:23 +0300</pubDate>
       
-      <guid>https://tariqbaater.github.io/posts/write-up/</guid>
+      <guid>http://localhost:1313/posts/write-up/</guid>
       <description>&lt;h1 id=&#34;try-hack-me-write-up-for-mrrobot&#34;&gt;Try Hack Me Write Up For Mr.Robot&lt;/h1&gt;
 &lt;h2 id=&#34;first-we-start-by-initializing-the-machine-with-nmap&#34;&gt;First we start by initializing the machine with nmap&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo nmap -p- -Pn &amp;lt;ip&amp;gt; | tee nmap.txt
