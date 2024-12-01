@@ -2,24 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tariqbaater.github.io/tags/cybersecurity/</loc>
+    <loc>http://localhost:65045/tags/cybersecurity/</loc>
     <lastmod>2024-11-30T21:10:55+03:00</lastmod>
   </url><url>
-    <loc>https://tariqbaater.github.io/posts/mr-robot/</loc>
+    <loc>http://localhost:65045/posts/mr-robot/</loc>
     <lastmod>2024-11-30T21:10:55+03:00</lastmod>
   </url><url>
-    <loc>https://tariqbaater.github.io/</loc>
+    <loc>http://localhost:65045/</loc>
     <lastmod>2024-11-30T21:10:55+03:00</lastmod>
   </url><url>
-    <loc>https://tariqbaater.github.io/posts/</loc>
+    <loc>http://localhost:65045/posts/</loc>
     <lastmod>2024-11-30T21:10:55+03:00</lastmod>
   </url><url>
-    <loc>https://tariqbaater.github.io/tags/</loc>
+    <loc>http://localhost:65045/tags/</loc>
     <lastmod>2024-11-30T21:10:55+03:00</lastmod>
   </url><url>
-    <loc>https://tariqbaater.github.io/tags/thm/</loc>
+    <loc>http://localhost:65045/tags/thm/</loc>
     <lastmod>2024-11-30T21:10:55+03:00</lastmod>
   </url><url>
-    <loc>https://tariqbaater.github.io/categories/</loc>
+    <loc>http://localhost:65045/categories/</loc>
   </url>
 </urlset>
