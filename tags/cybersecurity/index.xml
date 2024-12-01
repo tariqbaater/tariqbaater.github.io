@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Cybersecurity on My New Blog Site</title>
-    <link>http://localhost:65045/tags/cybersecurity/</link>
+    <link>http://localhost:1313/tags/cybersecurity/</link>
     <description>Recent content in Cybersecurity on My New Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Tariq Baater. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 30 Nov 2024 21:10:55 +0300</lastBuildDate><atom:link href="http://localhost:65045/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 30 Nov 2024 21:10:55 +0300</lastBuildDate><atom:link href="http://localhost:1313/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mr Robot</title>
-      <link>http://localhost:65045/posts/mr-robot/</link>
+      <link>http://localhost:1313/posts/mr-robot/</link>
       <pubDate>Sat, 30 Nov 2024 21:10:55 +0300</pubDate>
       
-      <guid>http://localhost:65045/posts/mr-robot/</guid>
+      <guid>http://localhost:1313/posts/mr-robot/</guid>
       <description>&lt;p&gt;This is the writeup for the Mr Robot CTF challenge.&lt;/p&gt;
 &lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
 &lt;p&gt;First we start by enumarating the ports&lt;/p&gt;
