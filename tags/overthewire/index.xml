@@ -7,7 +7,104 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Tariq Baater. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 23 Dec 2024 05:49:12 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/overthewire/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Dec 2024 06:17:50 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/overthewire/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leviathan</title>
+      <link>https://tariqbaater.github.io/posts/2024/leviathan/</link>
+      <pubDate>Mon, 23 Dec 2024 06:17:50 +0300</pubDate>
+      
+      <guid>https://tariqbaater.github.io/posts/2024/leviathan/</guid>
+      <description>&lt;h1 id=&#34;leviathan&#34;&gt;Leviathan&lt;/h1&gt;
+&lt;h2 id=&#34;leviathan0&#34;&gt;leviathan0&lt;/h2&gt;
+&lt;p&gt;username: leviathan0&lt;br&gt;
+password: leviathan0&lt;br&gt;
+ssh port: 2223&lt;/p&gt;
+&lt;p&gt;use grep to find the password.&lt;/p&gt;
+&lt;h2 id=&#34;leviathan1&#34;&gt;leviathan1&lt;/h2&gt;
+&lt;p&gt;username: leviathan1&lt;br&gt;
+password: 3QJ3TgzHDq&lt;/p&gt;
+&lt;p&gt;read the binary and trace with ltrace and strings.&lt;/p&gt;
+&lt;h2 id=&#34;leviathan2&#34;&gt;leviathan2&lt;/h2&gt;
+&lt;p&gt;username: leviathan2&lt;br&gt;
+password: NsN1HwFoyN&lt;/p&gt;
+&lt;p&gt;if you ltrace the the binary &amp;lsquo;printfile&amp;rsquo; you will see it&amp;rsquo;s using access() function that is known for a vulnerability TOCTOU (Time-of-check to time-of-use) and was mostly abused using symlinks.&lt;/p&gt;
+&lt;p&gt;Check the binary how it works&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;leviathan&#34;&gt;Leviathan&lt;/h1&gt;
+&lt;h2 id=&#34;leviathan0&#34;&gt;leviathan0&lt;/h2&gt;
+&lt;p&gt;username: leviathan0&lt;br&gt;
+password: leviathan0&lt;br&gt;
+ssh port: 2223&lt;/p&gt;
+&lt;p&gt;use grep to find the password.&lt;/p&gt;
+&lt;h2 id=&#34;leviathan1&#34;&gt;leviathan1&lt;/h2&gt;
+&lt;p&gt;username: leviathan1&lt;br&gt;
+password: 3QJ3TgzHDq&lt;/p&gt;
+&lt;p&gt;read the binary and trace with ltrace and strings.&lt;/p&gt;
+&lt;h2 id=&#34;leviathan2&#34;&gt;leviathan2&lt;/h2&gt;
+&lt;p&gt;username: leviathan2&lt;br&gt;
+password: NsN1HwFoyN&lt;/p&gt;
+&lt;p&gt;if you ltrace the the binary &amp;lsquo;printfile&amp;rsquo; you will see it&amp;rsquo;s using access() function that is known for a vulnerability TOCTOU (Time-of-check to time-of-use) and was mostly abused using symlinks.&lt;/p&gt;
+&lt;p&gt;Check the binary how it works&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ltrace -f ./printfile filename
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Since we found that access has a delay reading files, we can use that opportunity to read a filtered file.
+The idea is to modify the file between the moment it gets checked for permissions and the moment it gets opened. This is done by creating a symlink on the file, targeting the real file we wanna access.&lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;ll need to run the commands on two separate screens, first we will chain multiple commands to symlink the target file to our tmp file in tmp then watch it run every 0.1 seconds.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;watch -n 0.1 touch /tmp/tmpfolder/lev3; ln -sf /etc/leviathan_pass/lev3 /tmp/tmpfolder/lev3; rm /tmp/tmpfolder/lev3
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On the second screen i will use a for loop to print the file 50 times hoping that i catch the delay loop hole before being restricted.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i in &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;1..50&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;     ./printfile /tmp/sbin/lev3; &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After few loops the intended output will be printed.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;f0n8h2iWLP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;You cant have that file...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;leviathan3&#34;&gt;leviathan3&lt;/h2&gt;
+&lt;p&gt;username: leviathan3&lt;br&gt;
+password: f0n8h2iWLP&lt;/p&gt;
+&lt;p&gt;read the binary &amp;rsquo;level3&amp;rsquo; and trace with ltrace and strings, there is a string comparison, same as as leviathan1.&lt;/p&gt;
+&lt;h2 id=&#34;leviathan4&#34;&gt;leviathan4&lt;/h2&gt;
+&lt;p&gt;username: leviathan4&lt;br&gt;
+password: WG1egElCvO&lt;/p&gt;
+&lt;p&gt;There is a binary labelled &amp;lsquo;bin&amp;rsquo; in a hidden trash directory, if executed it prints out binary bytes. So i used the below script to decode the bytes to ascii text.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; binary in &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$@&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    printf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\\&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;printf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;%03o&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$((&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2#&lt;/span&gt;$binary&lt;span style=&#34;color:#66d9ef&#34;&gt;))&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you run the above script against the binary you will find your password for leviathan5.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod +x script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./script &lt;span style=&#34;color:#ae81ff&#34;&gt;00110000&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;01100100&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;01111001&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;01111000&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;01010100&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;00110111&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;01000110&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;00110100&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;01010001&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;01000100&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;00001010&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;0dyxT7F4QD
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;leviathan5&#34;&gt;leviathan5&lt;/h2&gt;
+&lt;p&gt;username: leviathan5&lt;br&gt;
+password: 0dyxT7F4QD&lt;/p&gt;
+&lt;p&gt;This one is also fairly easy.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# If you echo foo into the file and run the leviathan5 binary, it will print out the file content.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;foo&amp;#34;&lt;/span&gt; &amp;gt; /tmp/file.log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output: foo&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# so all we have to do is to link the leviathan6 password file to /tmp/file.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ln -sf /etc/leviathan_pass/leviathan6 /tmp/file.log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# and run the leviathan5 binary&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./leviathan5 /tmp/file.log
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output: szo7HDB88w&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;leviathan6&#34;&gt;leviathan6&lt;/h2&gt;
+&lt;p&gt;username: leviathan6&lt;br&gt;
+password: szo7HDB88w&lt;/p&gt;
+&lt;p&gt;There is a binary that requires a 4 digit code, so i used the below script to generate the code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i in &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;1..9999&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; ./leviathan6 $i; &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Eventually one of the loop will crack the code and we get shell, just cat the next level password.&lt;/p&gt;
+&lt;h2 id=&#34;leviathan7&#34;&gt;leviathan7&lt;/h2&gt;
+&lt;p&gt;username: leviathan7&lt;br&gt;
+password: qEs5Io5yM8&lt;/p&gt;
+&lt;p&gt;And that&amp;rsquo;s it for now.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Bandit</title>
       <link>https://tariqbaater.github.io/posts/2024/bandit/</link>
