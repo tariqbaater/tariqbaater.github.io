@@ -205,20 +205,20 @@ password: &lt;strong&gt;cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output: **0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO**&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/setuid.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit20&#34;&gt;bandit20&lt;/h3&gt;
-&lt;p&gt;username: bandit20
+&lt;p&gt;username: bandit20&lt;br&gt;
 password: &lt;strong&gt;0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).&lt;/p&gt;
 &lt;p&gt;Using ’netcat’, we can create a connection in server mode - which listens for inbound connection. To have netcat send the password, I use echo and pipe it into netcat. The -n flag is to prevent newline characters in the input. Lastly, we let the process run in the background with &amp;amp;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -n &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;GbKksEFF4yrVs6il55v6gwY5aVje5f0j&amp;#39;&lt;/span&gt; | nc -l -p &lt;span style=&#34;color:#ae81ff&#34;&gt;1234&lt;/span&gt; &amp;amp;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/netcat.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit21&#34;&gt;bandit21&lt;/h3&gt;
-&lt;p&gt;username: bandit21
+&lt;p&gt;username: bandit21&lt;br&gt;
 password: &lt;strong&gt;EeoULMCra2q0dSkYj561DX7s1CpBuOBt&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
 &lt;p&gt;There is a bash script executing after every minute and it seems executable to all users, let&amp;rsquo; read the contents.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/cron.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit22&#34;&gt;bandit22&lt;/h3&gt;
-&lt;p&gt;username: bandit22
+&lt;p&gt;username: bandit22&lt;br&gt;
 password: &lt;strong&gt;tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
 &lt;p&gt;There is a bash script executing after every minute, let&amp;rsquo;s read the contents.&lt;/p&gt;
@@ -235,7 +235,7 @@ password: &lt;strong&gt;tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/md5sum.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;All we had to do was run part of the script and we will get the filename that the cronjob dumps the password into.&lt;/p&gt;
 &lt;h3 id=&#34;bandit23&#34;&gt;bandit23&lt;/h3&gt;
-&lt;p&gt;username: bandit23
+&lt;p&gt;username: bandit23&lt;br&gt;
 password: &lt;strong&gt;0Zf11ioIjMVN551jX3CmStKLYqjk54Ga&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
 &lt;p&gt;NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!&lt;/p&gt;
@@ -270,7 +270,7 @@ password: &lt;strong&gt;0Zf11ioIjMVN551jX3CmStKLYqjk54Ga&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After 1 minute if you cat tha pass.txt file you will see the password.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/script.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit24&#34;&gt;bandit24&lt;/h3&gt;
-&lt;p&gt;username: bandit24
+&lt;p&gt;username: bandit24&lt;br&gt;
 password: &lt;strong&gt;gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 You do not need to create new connections each time.&lt;/p&gt;
@@ -286,7 +286,7 @@ You do not need to create new connections each time.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if you run the sciprt eventually it will run a correct pincode and spit out the password.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/brute.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit25&#34;&gt;bandit25&lt;/h3&gt;
-&lt;p&gt;username: bandit25
+&lt;p&gt;username: bandit25&lt;br&gt;
 password: &lt;strong&gt;iCi86ttT4KSNe1armKiwbQNmB3YJP3q4&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.&lt;/p&gt;
 &lt;p&gt;Since we are on bandit25 we can cat /etc/passwd and see the shell of bandit26.&lt;/p&gt;
@@ -297,12 +297,12 @@ I just increased my terminal fonts to imitate as if the terminal is small in siz
 &lt;p&gt;Now when we ssh into bandit26 more will executed and we can enter into vim mode using &lt;strong&gt;v&lt;/strong&gt;, from there we can open files with :e or even run :shell. But since the default shell is being called through /usr/bin/showtext we can set the shell to bash; :set shell=/bin/bash and now we can spawn a proper shell with :shell.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/more.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit26&#34;&gt;bandit26&lt;/h3&gt;
-&lt;p&gt;username: bandit26
+&lt;p&gt;username: bandit26&lt;br&gt;
 password: &lt;strong&gt;s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This level is just a gift, all we had to do was use the binary in bandit26 home folder which executes any command as bandit27.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./bandit27-do cat /etc/bandit_pass/bandit27
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit-27&#34;&gt;bandit 27&lt;/h3&gt;
-&lt;p&gt;username: bandit27
+&lt;p&gt;username: bandit27&lt;br&gt;
 password: &lt;strong&gt;upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.&lt;/p&gt;
 &lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
@@ -310,7 +310,7 @@ password: &lt;strong&gt;upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you cd into the repo you&amp;rsquo;ll find a README which contains the password for the next level.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit28&#34;&gt;bandit28&lt;/h3&gt;
-&lt;p&gt;username: bandit28
+&lt;p&gt;username: bandit28&lt;br&gt;
 password: &lt;strong&gt;Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.&lt;/p&gt;
 &lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
@@ -320,7 +320,7 @@ password: &lt;strong&gt;Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-log.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;As you can see above we found a commit message that the developer leaked the password mistakenly.&lt;/p&gt;
 &lt;h3 id=&#34;bandit29&#34;&gt;bandit29&lt;/h3&gt;
-&lt;p&gt;username: bandit29
+&lt;p&gt;username: bandit29&lt;br&gt;
 password: &lt;strong&gt;4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.&lt;/p&gt;
 &lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
@@ -329,7 +329,7 @@ password: &lt;strong&gt;4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It seems there are remotes branches and dev seems to be the one we are looking for. If we switch to dev and cat README file we find the password.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/remote-branch.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit30&#34;&gt;bandit30&lt;/h3&gt;
-&lt;p&gt;username: bandit30
+&lt;p&gt;username: bandit30&lt;br&gt;
 password: &lt;strong&gt;qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.&lt;/p&gt;
 &lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
@@ -339,7 +339,7 @@ password: &lt;strong&gt;qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When we run the command above we get a tag referenced as secret, we  can view with git show.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-tag.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit31&#34;&gt;bandit31&lt;/h3&gt;
-&lt;p&gt;username: bandit31
+&lt;p&gt;username: bandit31&lt;br&gt;
 password: &lt;strong&gt;fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.&lt;/p&gt;
 &lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
@@ -353,7 +353,7 @@ password: &lt;strong&gt;fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After pushing the file we get the password as below.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-push.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit32&#34;&gt;bandit32&lt;/h3&gt;
-&lt;p&gt;username: bandit32
+&lt;p&gt;username: bandit32&lt;br&gt;
 password: &lt;strong&gt;3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This challenge has a service that takes our input as shell commands, the problem is it converts our commands into uppercase. We need to escape the service shell into a normal shell. the variable $0 has a reference to a shell.&lt;/p&gt;
 &lt;p&gt;This challenge has a service that takes our input as shell commands, the problem is it converts our commands into uppercase. We need to escape the service shell into a normal shell, the variable $0 in linux has a reference to a shell.&lt;/p&gt;
@@ -362,7 +362,7 @@ password: &lt;strong&gt;3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K&lt;/strong&gt;&lt;/p&gt
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When we just run $0 it&amp;rsquo;ll break out the service and run the local shell, from there we can just cat the next level&amp;rsquo;s password.&lt;/p&gt;
 &lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/sub-shell.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;bandit33&#34;&gt;bandit33&lt;/h3&gt;
-&lt;p&gt;username: bandit33
+&lt;p&gt;username: bandit33&lt;br&gt;
 password: &lt;strong&gt;tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0&lt;/strong&gt;&lt;/p&gt;
 </content>
     </item>

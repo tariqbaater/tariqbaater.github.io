@@ -326,20 +326,20 @@ password: <strong>cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8</strong></p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#output: **0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO**</span>
 </span></span></code></pre></div><p><img alt="image" src="/setuid.png"></p>
 <h3 id="bandit20">bandit20<a href="#bandit20" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit20
+<p>username: bandit20<br>
 password: <strong>0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO</strong></p>
 <p>There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).</p>
 <p>Using ’netcat’, we can create a connection in server mode - which listens for inbound connection. To have netcat send the password, I use echo and pipe it into netcat. The -n flag is to prevent newline characters in the input. Lastly, we let the process run in the background with &amp;.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo -n <span style="color:#e6db74">&#39;GbKksEFF4yrVs6il55v6gwY5aVje5f0j&#39;</span> | nc -l -p <span style="color:#ae81ff">1234</span> &amp;
 </span></span></code></pre></div><p><img alt="image" src="/netcat.png"></p>
 <h3 id="bandit21">bandit21<a href="#bandit21" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit21
+<p>username: bandit21<br>
 password: <strong>EeoULMCra2q0dSkYj561DX7s1CpBuOBt</strong></p>
 <p>A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.</p>
 <p>There is a bash script executing after every minute and it seems executable to all users, let&rsquo; read the contents.</p>
 <p><img alt="image" src="/cron.png"></p>
 <h3 id="bandit22">bandit22<a href="#bandit22" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit22
+<p>username: bandit22<br>
 password: <strong>tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q</strong></p>
 <p>A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.</p>
 <p>There is a bash script executing after every minute, let&rsquo;s read the contents.</p>
@@ -356,7 +356,7 @@ password: <strong>tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q</strong></p>
 </span></span></code></pre></div><p><img alt="image" src="/md5sum.png"></p>
 <p>All we had to do was run part of the script and we will get the filename that the cronjob dumps the password into.</p>
 <h3 id="bandit23">bandit23<a href="#bandit23" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit23
+<p>username: bandit23<br>
 password: <strong>0Zf11ioIjMVN551jX3CmStKLYqjk54Ga</strong></p>
 <p>A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.</p>
 <p>NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!</p>
@@ -391,7 +391,7 @@ password: <strong>0Zf11ioIjMVN551jX3CmStKLYqjk54Ga</strong></p>
 </span></span></code></pre></div><p>After 1 minute if you cat tha pass.txt file you will see the password.</p>
 <p><img alt="image" src="/script.png"></p>
 <h3 id="bandit24">bandit24<a href="#bandit24" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit24
+<p>username: bandit24<br>
 password: <strong>gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8</strong></p>
 <p>A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
 You do not need to create new connections each time.</p>
@@ -407,7 +407,7 @@ You do not need to create new connections each time.</p>
 </span></span></code></pre></div><p>if you run the sciprt eventually it will run a correct pincode and spit out the password.</p>
 <p><img alt="image" src="/brute.png"></p>
 <h3 id="bandit25">bandit25<a href="#bandit25" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit25
+<p>username: bandit25<br>
 password: <strong>iCi86ttT4KSNe1armKiwbQNmB3YJP3q4</strong></p>
 <p>Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.</p>
 <p>Since we are on bandit25 we can cat /etc/passwd and see the shell of bandit26.</p>
@@ -418,12 +418,12 @@ I just increased my terminal fonts to imitate as if the terminal is small in siz
 <p>Now when we ssh into bandit26 more will executed and we can enter into vim mode using <strong>v</strong>, from there we can open files with :e or even run :shell. But since the default shell is being called through /usr/bin/showtext we can set the shell to bash; :set shell=/bin/bash and now we can spawn a proper shell with :shell.</p>
 <p><img alt="image" src="/more.png"></p>
 <h3 id="bandit26">bandit26<a href="#bandit26" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit26
+<p>username: bandit26<br>
 password: <strong>s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ</strong></p>
 <p>This level is just a gift, all we had to do was use the binary in bandit26 home folder which executes any command as bandit27.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./bandit27-do cat /etc/bandit_pass/bandit27
 </span></span></code></pre></div><h3 id="bandit-27">bandit 27<a href="#bandit-27" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit27
+<p>username: bandit27<br>
 password: <strong>upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB</strong></p>
 <p>There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.</p>
 <p>Clone the repository and find the password for the next level.</p>
@@ -431,7 +431,7 @@ password: <strong>upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB</strong></p>
 </span></span></code></pre></div><p>If you cd into the repo you&rsquo;ll find a README which contains the password for the next level.</p>
 <p><img alt="image" src="/git.png"></p>
 <h3 id="bandit28">bandit28<a href="#bandit28" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit28
+<p>username: bandit28<br>
 password: <strong>Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN</strong></p>
 <p>There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.</p>
 <p>Clone the repository and find the password for the next level.</p>
@@ -441,7 +441,7 @@ password: <strong>Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN</strong></p>
 </span></span></code></pre></div><p><img alt="image" src="/git-log.png"></p>
 <p>As you can see above we found a commit message that the developer leaked the password mistakenly.</p>
 <h3 id="bandit29">bandit29<a href="#bandit29" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit29
+<p>username: bandit29<br>
 password: <strong>4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7</strong></p>
 <p>There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.</p>
 <p>Clone the repository and find the password for the next level.</p>
@@ -450,7 +450,7 @@ password: <strong>4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7</strong></p>
 </span></span></code></pre></div><p>It seems there are remotes branches and dev seems to be the one we are looking for. If we switch to dev and cat README file we find the password.</p>
 <p><img alt="image" src="/remote-branch.png"></p>
 <h3 id="bandit30">bandit30<a href="#bandit30" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit30
+<p>username: bandit30<br>
 password: <strong>qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL</strong></p>
 <p>There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.</p>
 <p>Clone the repository and find the password for the next level.</p>
@@ -460,7 +460,7 @@ password: <strong>qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL</strong></p>
 </span></span></code></pre></div><p>When we run the command above we get a tag referenced as secret, we  can view with git show.</p>
 <p><img alt="image" src="/git-tag.png"></p>
 <h3 id="bandit31">bandit31<a href="#bandit31" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit31
+<p>username: bandit31<br>
 password: <strong>fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy</strong></p>
 <p>There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.</p>
 <p>Clone the repository and find the password for the next level.</p>
@@ -474,7 +474,7 @@ password: <strong>fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy</strong></p>
 </span></span></code></pre></div><p>After pushing the file we get the password as below.</p>
 <p><img alt="image" src="/git-push.png"></p>
 <h3 id="bandit32">bandit32<a href="#bandit32" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit32
+<p>username: bandit32<br>
 password: <strong>3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K</strong></p>
 <p>This challenge has a service that takes our input as shell commands, the problem is it converts our commands into uppercase. We need to escape the service shell into a normal shell. the variable $0 has a reference to a shell.</p>
 <p>This challenge has a service that takes our input as shell commands, the problem is it converts our commands into uppercase. We need to escape the service shell into a normal shell, the variable $0 in linux has a reference to a shell.</p>
@@ -483,7 +483,7 @@ password: <strong>3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K</strong></p>
 </span></span></code></pre></div><p>When we just run $0 it&rsquo;ll break out the service and run the local shell, from there we can just cat the next level&rsquo;s password.</p>
 <p><img alt="image" src="/sub-shell.png"></p>
 <h3 id="bandit33">bandit33<a href="#bandit33" class="hanchor" ariaLabel="Anchor">#</a> </h3>
-<p>username: bandit33
+<p>username: bandit33<br>
 password: <strong>tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0</strong></p>
 
       </div></div>
