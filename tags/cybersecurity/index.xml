@@ -7,13 +7,372 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Tariq Baater. All rights reserved.</copyright>
-    <lastBuildDate>Sat, 30 Nov 2024 21:10:55 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Dec 2024 05:49:12 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/cybersecurity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bandit</title>
+      <link>https://tariqbaater.github.io/posts/2024/bandit/</link>
+      <pubDate>Mon, 23 Dec 2024 05:49:12 +0300</pubDate>
+      
+      <guid>https://tariqbaater.github.io/posts/2024/bandit/</guid>
+      <description>&lt;h1 id=&#34;bandit&#34;&gt;Bandit&lt;/h1&gt;
+&lt;h3 id=&#34;bandit0&#34;&gt;bandit0&lt;/h3&gt;
+&lt;p&gt;username: bandit0 &lt;br&gt;
+password: bandit0&lt;/p&gt;
+&lt;p&gt;This one is fairly easy since the password is in the readme file&lt;/p&gt;
+&lt;h3 id=&#34;bandit1&#34;&gt;bandit1&lt;/h3&gt;
+&lt;p&gt;username: bandit1&lt;br&gt;
+password: &lt;strong&gt;ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;to read files with characters as name we append ./ to the filename.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat ./-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output **263JGJPfgU6LtdEvgfWU1XP5yac29mFx**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit2&#34;&gt;bandit2&lt;/h3&gt;
+&lt;p&gt;username: bandit2&lt;br&gt;
+password: &lt;strong&gt;263JGJPfgU6LtdEvgfWU1XP5yac29mFx&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;to read files with spaces we can qoute the file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;spaces in this filename&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output **MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit3&#34;&gt;bandit3&lt;/h3&gt;
+&lt;p&gt;username: bandit3&lt;br&gt;
+password: &lt;strong&gt;MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;using ls with -la flags to see hidden files and directories&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;bandit&#34;&gt;Bandit&lt;/h1&gt;
+&lt;h3 id=&#34;bandit0&#34;&gt;bandit0&lt;/h3&gt;
+&lt;p&gt;username: bandit0 &lt;br&gt;
+password: bandit0&lt;/p&gt;
+&lt;p&gt;This one is fairly easy since the password is in the readme file&lt;/p&gt;
+&lt;h3 id=&#34;bandit1&#34;&gt;bandit1&lt;/h3&gt;
+&lt;p&gt;username: bandit1&lt;br&gt;
+password: &lt;strong&gt;ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;to read files with characters as name we append ./ to the filename.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat ./-
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output **263JGJPfgU6LtdEvgfWU1XP5yac29mFx**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit2&#34;&gt;bandit2&lt;/h3&gt;
+&lt;p&gt;username: bandit2&lt;br&gt;
+password: &lt;strong&gt;263JGJPfgU6LtdEvgfWU1XP5yac29mFx&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;to read files with spaces we can qoute the file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;spaces in this filename&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output **MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit3&#34;&gt;bandit3&lt;/h3&gt;
+&lt;p&gt;username: bandit3&lt;br&gt;
+password: &lt;strong&gt;MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;using ls with -la flags to see hidden files and directories&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls -la inhere/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit4&#34;&gt;bandit4&lt;/h3&gt;
+&lt;p&gt;username: bandit4&lt;br&gt;
+password: &lt;strong&gt;2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This time in the &amp;lsquo;inhere&amp;rsquo; directory has many files but we don&amp;rsquo;t know which has the password, the easiest solution is to use grep and find for patterns. Since we arleady know the passwords in bandit contain small letters, capital letters and numbers. We will use the below regex pattern.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd inhere
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;[a-zA-Z0-9]&amp;#39;&lt;/span&gt; .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file08: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file02: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file09: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file01: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file00: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file05: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-file07:**4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw**
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-file03:d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file03: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file06: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep: -file04: binary file matches
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit5&#34;&gt;bandit5&lt;/h3&gt;
+&lt;p&gt;username: bandit5&lt;br&gt;
+password: &lt;strong&gt;4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In this challenge the password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:&lt;/p&gt;
+&lt;p&gt;human-readable
+1033 bytes in size
+not executable&lt;/p&gt;
+&lt;p&gt;Using find is much easier if you know the details.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find . -type f -size 1033c 2&amp;gt;/dev/null | xargs cat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output **HWasnPhtq9AVKe0dmk45nxy20cvUa6EG**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit-6&#34;&gt;bandit 6&lt;/h3&gt;
+&lt;p&gt;username: bandit6&lt;br&gt;
+password: &lt;strong&gt;HWasnPhtq9AVKe0dmk45nxy20cvUa6EG&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored somewhere on the server and has all of the following properties:&lt;/p&gt;
+&lt;p&gt;owned by user bandit7&lt;br&gt;
+owned by group bandit6&lt;br&gt;
+33 bytes in size&lt;/p&gt;
+&lt;p&gt;Find has many flags making it easier to pinpoint to a file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find / -user bandit7             -group bandit6 -size 33c 2&amp;gt;/dev/null | xargs cat
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output **morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit7&#34;&gt;bandit7&lt;/h3&gt;
+&lt;p&gt;username: bandit7&lt;br&gt;
+password: &lt;strong&gt;morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in the file data.txt next to the word millionth.&lt;/p&gt;
+&lt;p&gt;grep the file for the word millionth.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;grep millionth data.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output: millionth	**dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit8&#34;&gt;bandit8&lt;/h3&gt;
+&lt;p&gt;username: bandit8&lt;br&gt;
+password: &lt;strong&gt;dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in the file data.txt and is the only line of text that occurs only once.&lt;/p&gt;
+&lt;p&gt;In this challenge i used a combination of sort, uniq and awk to print exactly what is need.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat data.txt |sort |  uniq -c | awk &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{if ($1 &amp;lt; 10) print $0}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output: 1 **4CKMh1JI91bUIZZPXDqGanal4xvAg0JM**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit9&#34;&gt;bandit9&lt;/h3&gt;
+&lt;p&gt;username: bandit9&lt;br&gt;
+password: &lt;strong&gt;4CKMh1JI91bUIZZPXDqGanal4xvAg0JM&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;strings data.txt | awk &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{print $2}&amp;#39;&lt;/span&gt; | grep -E &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;.{32,}&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output : **FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit10&#34;&gt;bandit10&lt;/h3&gt;
+&lt;p&gt;username: bandit10&lt;br&gt;
+password: &lt;strong&gt;FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in the file data.txt, which contains base64 encoded data&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat data.txt | base64 -d
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output The password is **dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit11&#34;&gt;bandit11&lt;/h3&gt;
+&lt;p&gt;username: bandit11&lt;br&gt;
+password: &lt;strong&gt;dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions, since i enjoy using the terminal i founbd this easy way to decode rot13             using &amp;rsquo;tr&amp;rsquo;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat data.txt | tr &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;A-Za-z&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;N-ZA-Mn-za-m&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output The password is **7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit12&#34;&gt;bandit12&lt;/h3&gt;
+&lt;p&gt;username: bandit12&lt;br&gt;
+password: &lt;strong&gt;7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work. Use mkdir with a hard to guess directory name. Or better, use the command “mktemp -d”. Then copy the datafile using cp, and rename it using mv (read the manpages!).&lt;/p&gt;
+&lt;p&gt;This is where the challenges take a toll, we have to figure out how to decompress until we get the password.&lt;/p&gt;
+&lt;p&gt;If you cat the file, it is a hexadump with data2.bin which indicates that there is some compressed data within. Let&amp;rsquo;s convert the file to binary.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;xxd -r data.txt &amp;gt; binary
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you check the file it is a gzip file, so let&amp;rsquo;s change extension of the file and unzip using gunzip.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mv binary binary.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gunzip binary.gz
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output binary&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you check the file ype you&amp;rsquo;d see it&amp;rsquo;s bzip2, so let&amp;rsquo;s unzip using bunzip2.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bunzip2 binary
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ls
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output binary.out&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So you get the idea we have to unzip and decompress until we get an ASCII text file that contains the password for the next level.&lt;/p&gt;
+&lt;p&gt;We find the password after several decompressions as follows: The password is &lt;strong&gt;FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit13&#34;&gt;bandit13&lt;/h3&gt;
+&lt;p&gt;username: bandit13&lt;br&gt;
+password: &lt;strong&gt;FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in /etc/bandit_pass/bandit14             and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on.&lt;/p&gt;
+&lt;p&gt;So we use tack -i to to ssh with the given key into the next challenge.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -i sshkey.private bandit13@bandit.labs.overthewire.org -p &lt;span style=&#34;color:#ae81ff&#34;&gt;2220&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/bandit_pass/bandit14  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output: **MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit14&#34;&gt;bandit14&lt;/h3&gt;
+&lt;p&gt;username: bandit14&lt;br&gt;
+password: &lt;strong&gt;MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.&lt;/p&gt;
+&lt;p&gt;So we use netcat to connect to localhost on port 30000, where we can access whatever service is opened to that port and post our key to access the next level password.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nc localhost &lt;span style=&#34;color:#ae81ff&#34;&gt;30000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;**MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS** &lt;span style=&#34;color:#75715e&#34;&gt;# current level password&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output: Correct!&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# **8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit15&#34;&gt;bandit15&lt;/h3&gt;
+&lt;p&gt;username: bandit15&lt;br&gt;
+password: &lt;strong&gt;8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level can be retrieved by submitting the password of the current level to port 30001 on localhost using SSL/TLS encryption.&lt;/p&gt;
+&lt;p&gt;I searched online on how to connect to server from client side using openssl and found the below code.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;openssl s_client -connect localhost:30001
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The above will connect to the server but with securely, then we can provide the required key to get the next level password.&lt;/p&gt;
+&lt;h3 id=&#34;bandit16&#34;&gt;bandit16&lt;/h3&gt;
+&lt;p&gt;username: bandit16&lt;br&gt;
+password: kSkvUpMQ7lBYyCM4GBPvCvT1            BfWRy0Dx&lt;/p&gt;
+&lt;p&gt;The credentials for the next level can be retrieved by submitting the password of the current level to a port on localhost in the range 31000 to 32000. First find out which of these ports have a server listening on them. Then find out which of those speak SSL/TLS and which don’t. There is only 1 server that will give the next credentials, the others will simply send back to you whatever you send to it.&lt;/p&gt;
+&lt;p&gt;To see ports that are listening we&amp;rsquo;ll use &amp;lsquo;ss&amp;rsquo;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ss -tulnp | grep LISTEN
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/ss.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We see above that port 31790 stands out since it&amp;rsquo;s between 31000 and 32000 and also it&amp;rsquo;s size is 4096, let&amp;rsquo;s try and send a secure handshake. I tried using openssl but i wasn&amp;rsquo;t succesful so i resorted to netcat but with &amp;ndash;ssl flag.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ncat --ssl localhost &lt;span style=&#34;color:#ae81ff&#34;&gt;31790&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/ncat.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When we connect to the server we provide current level&amp;rsquo;s password and we get an ssh key for the next level as shown above.&lt;/p&gt;
+&lt;h3 id=&#34;bandit17&#34;&gt;bandit17&lt;/h3&gt;
+&lt;p&gt;username: bandit17&lt;br&gt;
+password: &lt;strong&gt;EReVavePLFHtFlFsjn3hyzMlvSuSAcRD&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There are 2 files in the homedirectory: passwords.old and passwords.new. The password for the next level is in passwords.new and is the only line that has been changed between passwords.old and passwords.new&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;diff -u passwords.old passwords.new
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/diff.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The password is : &lt;strong&gt;x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO&lt;/strong&gt;, as shown above.&lt;/p&gt;
+&lt;h3 id=&#34;bandit18&#34;&gt;bandit18&lt;/h3&gt;
+&lt;p&gt;username: bandit18&lt;br&gt;
+password: &lt;strong&gt;x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The password for the next level is stored in a file readme in the homedirectory. Unfortunately, someone has modified .bashrc to log you out when you log in with SSH.&lt;/p&gt;
+&lt;p&gt;Since we know there is a readme file in bandit18             home folder and we have credentials, we can copy the file remotely using ssh from our attacking machine.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;scp -P &lt;span style=&#34;color:#ae81ff&#34;&gt;2220&lt;/span&gt; bandit18@bandit.labs.overthewire.org:/home/bandit18/readme .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/scp.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;And voila, we get the password for the next level.&lt;/p&gt;
+&lt;h3 id=&#34;bandit19&#34;&gt;bandit19&lt;/h3&gt;
+&lt;p&gt;username: bandit19&lt;br&gt;
+password: &lt;strong&gt;cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To gain access to the next level, you should use the setuid binary in the homedirectory. Execute it without arguments to find out how to use it. The password for this level can be found in the usual place (/etc/bandit_pass), after you have used the setuid binary.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./bandit20-do cat /etc/bandit_pass/bandit20
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#output: **0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO**&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/setuid.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit20&#34;&gt;bandit20&lt;/h3&gt;
+&lt;p&gt;username: bandit20
+password: &lt;strong&gt;0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There is a setuid binary in the homedirectory that does the following: it makes a connection to localhost on the port you specify as a commandline argument. It then reads a line of text from the connection and compares it to the password in the previous level (bandit20). If the password is correct, it will transmit the password for the next level (bandit21).&lt;/p&gt;
+&lt;p&gt;Using ’netcat’, we can create a connection in server mode - which listens for inbound connection. To have netcat send the password, I use echo and pipe it into netcat. The -n flag is to prevent newline characters in the input. Lastly, we let the process run in the background with &amp;amp;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo -n &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;GbKksEFF4yrVs6il55v6gwY5aVje5f0j&amp;#39;&lt;/span&gt; | nc -l -p &lt;span style=&#34;color:#ae81ff&#34;&gt;1234&lt;/span&gt; &amp;amp;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/netcat.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit21&#34;&gt;bandit21&lt;/h3&gt;
+&lt;p&gt;username: bandit21
+password: &lt;strong&gt;EeoULMCra2q0dSkYj561DX7s1CpBuOBt&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
+&lt;p&gt;There is a bash script executing after every minute and it seems executable to all users, let&amp;rsquo; read the contents.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/cron.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit22&#34;&gt;bandit22&lt;/h3&gt;
+&lt;p&gt;username: bandit22
+password: &lt;strong&gt;tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
+&lt;p&gt;There is a bash script executing after every minute, let&amp;rsquo;s read the contents.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;myname&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;whoami&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mytarget&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;echo I am user $myname | md5sum | cut -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f 1&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Copying passwordfile /etc/bandit_pass/&lt;/span&gt;$myname&lt;span style=&#34;color:#e6db74&#34;&gt; to /tmp/&lt;/span&gt;$mytarget&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/bandit_pass/$myname &amp;gt; /tmp/$mytarget
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It seems to check who is the current user and then hashes the user as a variable named &amp;lsquo;mytarget&amp;rsquo;, then creates a new file in tmp with the hash as it&amp;rsquo;s name and dumps the next level password in it. All we have to do is figure out and the hashed file name and i can access the contents of the file.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;I am user bandit23&amp;#39;&lt;/span&gt; | md5sum | cut -d &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/md5sum.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;All we had to do was run part of the script and we will get the filename that the cronjob dumps the password into.&lt;/p&gt;
+&lt;h3 id=&#34;bandit23&#34;&gt;bandit23&lt;/h3&gt;
+&lt;p&gt;username: bandit23
+password: &lt;strong&gt;0Zf11ioIjMVN551jX3CmStKLYqjk54Ga&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A program is running automatically at regular intervals from cron, the time-based job scheduler. Look in /etc/cron.d/ for the configuration and see what command is being executed.&lt;/p&gt;
+&lt;p&gt;NOTE: This level requires you to create your own first shell-script. This is a very big step and you should be proud of yourself when you beat this level!&lt;/p&gt;
+&lt;p&gt;NOTE 2: Keep in mind that your shell script is removed once executed, so you may want to keep a copy around…&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;myname&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;whoami&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd /var/spool/$myname/foo
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Executing and deleting all scripts in /var/spool/&lt;/span&gt;$myname&lt;span style=&#34;color:#e6db74&#34;&gt;/foo:&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i in * .*;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; !&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;.&amp;#34;&lt;/span&gt; -a &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; !&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;..&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Handling &lt;/span&gt;$i&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        owner&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;stat --format &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%U&amp;#34;&lt;/span&gt; ./$i&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;owner&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;bandit23&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            timeout -s &lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt; ./$i
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        rm -f ./$i
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you cat the cronjob that is supposed to run as bandit24 you will see that it is saving bandit24 as a variable then changes directory to &amp;lsquo;/var/spool/$myname(which is the bandit24)/foo&amp;rsquo;,  then there is a for loop that negates any file or folder starting with &amp;lsquo;.&amp;rsquo; or &amp;lsquo;..&amp;rsquo;; it checks if the owner is us then executes the remaining file for 1 minute, kills the process and removes the file.&lt;/p&gt;
+&lt;p&gt;So let&amp;rsquo;s make a script that will be the remaining executed file in foo folder, &lt;strong&gt;make sure you give proper permissions to make sure another user can write into the files&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/bandit_pass/bandit24 &amp;gt; /tmp/&lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;use mktemp -d&lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;/pass.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch script.sh &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;777&lt;/span&gt; script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch pass.txt &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;777&lt;/span&gt; pass.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#ae81ff&#34;&gt;777&lt;/span&gt; /tmp/&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;use mktemp -d&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp script.sh /var/spool/bandit24/foo/script.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After 1 minute if you cat tha pass.txt file you will see the password.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/script.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit24&#34;&gt;bandit24&lt;/h3&gt;
+&lt;p&gt;username: bandit24
+password: &lt;strong&gt;gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A daemon is listening on port 30002 and will give you the password for bandit25 if given the password for bandit24 and a secret numeric 4-digit pincode. There is no way to retrieve the pincode except by going through all of the 10000 combinations, called brute-forcing.
+You do not need to create new connections each time.&lt;/p&gt;
+&lt;p&gt;With this one i used crunch to generate all possible 4 digit numbers and then used netcat to connect to the port and post the password and the pincode to access the next level password.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;crunch &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0000&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;9999&lt;/span&gt; -o pincode.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nc localhost &lt;span style=&#34;color:#ae81ff&#34;&gt;30002&lt;/span&gt; &amp;lt; pincode.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Crunch is not installed in the bandit, so i resorted to bash script instead.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Generate all possible 4-digit numbers and pass them to nc&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nc localhost &lt;span style=&#34;color:#ae81ff&#34;&gt;30002&lt;/span&gt; &amp;lt; &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i in &lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;seq -w &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; 9999&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt; echo gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8 $i; &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if you run the sciprt eventually it will run a correct pincode and spit out the password.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/brute.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit25&#34;&gt;bandit25&lt;/h3&gt;
+&lt;p&gt;username: bandit25
+password: &lt;strong&gt;iCi86ttT4KSNe1armKiwbQNmB3YJP3q4&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Logging in to bandit26 from bandit25 should be fairly easy… The shell for user bandit26 is not /bin/bash, but something else. Find out what it is, how it works and how to break out of it.&lt;/p&gt;
+&lt;p&gt;Since we are on bandit25 we can cat /etc/passwd and see the shell of bandit26.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cat /etc/passwd | grep bandit26
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output: bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;if we cat /usr/bin/showtext we will see the below script which uses more and since the file is small it will probably run all commands in the script, so we have to improvize and reduce our terminal size to make the script execute only some of the commands.
+I just increased my terminal fonts to imitate as if the terminal is small in size.&lt;/p&gt;
+&lt;p&gt;Now when we ssh into bandit26 more will executed and we can enter into vim mode using &lt;strong&gt;v&lt;/strong&gt;, from there we can open files with :e or even run :shell. But since the default shell is being called through /usr/bin/showtext we can set the shell to bash; :set shell=/bin/bash and now we can spawn a proper shell with :shell.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/more.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit26&#34;&gt;bandit26&lt;/h3&gt;
+&lt;p&gt;username: bandit26
+password: &lt;strong&gt;s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This level is just a gift, all we had to do was use the binary in bandit26 home folder which executes any command as bandit27.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;./bandit27-do cat /etc/bandit_pass/bandit27
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;bandit-27&#34;&gt;bandit 27&lt;/h3&gt;
+&lt;p&gt;username: bandit27
+password: &lt;strong&gt;upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There is a git repository at ssh://bandit27-git@localhost/home/bandit27-git/repo via the port 2220. The password for the user bandit27-git is the same as for the user bandit27.&lt;/p&gt;
+&lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you cd into the repo you&amp;rsquo;ll find a README which contains the password for the next level.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit28&#34;&gt;bandit28&lt;/h3&gt;
+&lt;p&gt;username: bandit28
+password: &lt;strong&gt;Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There is a git repository at ssh://bandit28-git@localhost/home/bandit28-git/repo via the port 2220. The password for the user bandit28-git is the same as for the user bandit28.&lt;/p&gt;
+&lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
+&lt;p&gt;In this challenge we will clone the repo just like the previous level but there is no password in the README this time. If you cat README you it shows that the developer has some notes and this indicates there could be multpile git pushes, let&amp;rsquo;s check the git log for more details.&lt;/p&gt;
+&lt;p&gt;[&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-notes.png&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-log.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;As you can see above we found a commit message that the developer leaked the password mistakenly.&lt;/p&gt;
+&lt;h3 id=&#34;bandit29&#34;&gt;bandit29&lt;/h3&gt;
+&lt;p&gt;username: bandit29
+password: &lt;strong&gt;4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There is a git repository at ssh://bandit29-git@localhost/home/bandit29-git/repo via the port 2220. The password for the user bandit29-git is the same as for the user bandit29.&lt;/p&gt;
+&lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
+&lt;p&gt;Same as previous challenges but this time the developer is not using any passwords in production, this indicates he may be having another branch for features and testing. Let&amp;rsquo;s check available branches.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch -r &lt;span style=&#34;color:#75715e&#34;&gt;# the flag -r is to show remote branches&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It seems there are remotes branches and dev seems to be the one we are looking for. If we switch to dev and cat README file we find the password.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/remote-branch.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit30&#34;&gt;bandit30&lt;/h3&gt;
+&lt;p&gt;username: bandit30
+password: &lt;strong&gt;qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There is a git repository at ssh://bandit30-git@localhost/home/bandit30-git/repo via the port 2220. The password for the user bandit30-git is the same as for the user bandit30.&lt;/p&gt;
+&lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo.git 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This gave me trouble a little bit but after researching i found out that there is a git command called &amp;rsquo;tag&amp;rsquo; which can be used to reference a specific point in a repo.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git tag
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When we run the command above we get a tag referenced as secret, we  can view with git show.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-tag.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit31&#34;&gt;bandit31&lt;/h3&gt;
+&lt;p&gt;username: bandit31
+password: &lt;strong&gt;fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;There is a git repository at ssh://bandit31-git@localhost/home/bandit31-git/repo via the port 2220. The password for the user bandit31-git is the same as for the user bandit31.&lt;/p&gt;
+&lt;p&gt;Clone the repository and find the password for the next level.&lt;/p&gt;
+&lt;p&gt;When we cat the README it&amp;rsquo;s telling us to push a file with below details.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-push2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;All we have to do is create a file named key.txt with &amp;ldquo;May I Come in?&amp;rdquo; as it&amp;rsquo;s content and push it to master.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add key.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;May I Come in?&amp;#39;&lt;/span&gt; &amp;gt; key.txt
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git commit -m &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;added key.txt&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin master
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After pushing the file we get the password as below.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/git-push.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit32&#34;&gt;bandit32&lt;/h3&gt;
+&lt;p&gt;username: bandit32
+password: &lt;strong&gt;3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;This challenge has a service that takes our input as shell commands, the problem is it converts our commands into uppercase. We need to escape the service shell into a normal shell. the variable $0 has a reference to a shell.&lt;/p&gt;
+&lt;p&gt;This challenge has a service that takes our input as shell commands, the problem is it converts our commands into uppercase. We need to escape the service shell into a normal shell, the variable $0 in linux has a reference to a shell.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;echo $0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output : bash or -zsh&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;When we just run $0 it&amp;rsquo;ll break out the service and run the local shell, from there we can just cat the next level&amp;rsquo;s password.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;image&#34; src=&#34;https://tariqbaater.github.io/sub-shell.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;bandit33&#34;&gt;bandit33&lt;/h3&gt;
+&lt;p&gt;username: bandit33
+password: &lt;strong&gt;tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0&lt;/strong&gt;&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Mr Robot</title>
-      <link>https://tariqbaater.github.io/posts/mr-robot/</link>
+      <link>https://tariqbaater.github.io/posts/2024/mr-robot/</link>
       <pubDate>Sat, 30 Nov 2024 21:10:55 +0300</pubDate>
       
-      <guid>https://tariqbaater.github.io/posts/mr-robot/</guid>
+      <guid>https://tariqbaater.github.io/posts/2024/mr-robot/</guid>
       <description>&lt;p&gt;This is the writeup for the Mr Robot CTF challenge.&lt;/p&gt;
 &lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
 &lt;!-- raw HTML omitted --&gt;

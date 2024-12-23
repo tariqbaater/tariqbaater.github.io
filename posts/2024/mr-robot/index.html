@@ -2,20 +2,16 @@
 <html lang="en">
 <head>
   
-    <title>My First Post :: My New Blog Site</title>
+    <title>Mr Robot :: My New Blog Site</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="This is a Markdown file It is a simple example of a Markdown file, containing a single paragraph.
-I am using Hugo to build this site.
-I am using Netlify to host this site.
-I am using GitHub to manage my code.
-" />
+<meta name="description" content="THM CTF Writeup" />
 <meta name="keywords" content=", " />
 
   <meta name="robots" content="noodp" />
 
-<link rel="canonical" href="https://tariqbaater.github.io/posts/2024/my-first-post/" />
+<link rel="canonical" href="https://tariqbaater.github.io/posts/2024/mr-robot/" />
 
 
 
@@ -82,22 +78,20 @@ I am using GitHub to manage my code.
 
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
-<meta property="og:title" content="My First Post">
-<meta property="og:description" content="This is a Markdown file It is a simple example of a Markdown file, containing a single paragraph.
-I am using Hugo to build this site.
-I am using Netlify to host this site.
-I am using GitHub to manage my code.
-" />
-<meta property="og:url" content="https://tariqbaater.github.io/posts/2024/my-first-post/" />
+<meta property="og:title" content="Mr Robot">
+<meta property="og:description" content="THM CTF Writeup" />
+<meta property="og:url" content="https://tariqbaater.github.io/posts/2024/mr-robot/" />
 <meta property="og:site_name" content="My New Blog Site" />
 
-  <meta property="og:image" content="https://tariqbaater.github.io/og-image.png">
+  
+  
+  <meta property="og:image" content="https://tariqbaater.github.io/mr-robot.png">
 
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
 
 
-  <meta property="article:published_time" content="2024-12-02 08:19:27 &#43;0300 &#43;03" />
+  <meta property="article:published_time" content="2024-11-30 21:10:55 &#43;0300 &#43;03" />
 
 
 
@@ -137,30 +131,45 @@ I am using GitHub to manage my code.
     
 <article class="post">
   <h1 class="post-title">
-    <a href="https://tariqbaater.github.io/posts/2024/my-first-post/">My First Post</a>
+    <a href="https://tariqbaater.github.io/posts/2024/mr-robot/">Mr Robot</a>
   </h1>
-  <div class="post-meta"><time class="post-date">2024-12-02</time><span class="post-author">tariq baater</span><span class="post-reading-time">1 min read (42 words)</span></div>
+  <div class="post-meta"><time class="post-date">2024-11-30</time><span class="post-author">tariqbaater</span><span class="post-reading-time">1 min read (94 words)</span></div>
 
   
     <span class="post-tags">
       
-      #<a href="https://tariqbaater.github.io/tags/"></a>&nbsp;
+      #<a href="https://tariqbaater.github.io/tags/thm/">thm</a>&nbsp;
       
-      #<a href="https://tariqbaater.github.io/tags/"></a>&nbsp;
+      #<a href="https://tariqbaater.github.io/tags/cybersecurity/">cybersecurity</a>&nbsp;
       
     </span>
   
   
+  <img src="https://tariqbaater.github.io/mr-robot.png"
+    class="post-cover"
+    alt="Mr Robot"
+    title="Cover Image" />
 
 
   
 
   <div class="post-content"><div>
-        <h2 id="this-is-a-markdownhttpsdaringfireballnetprojectsmarkdown-file">This is a <a href="https://daringfireball.net/projects/markdown/">Markdown</a> file<a href="#this-is-a-markdownhttpsdaringfireballnetprojectsmarkdown-file" class="hanchor" ariaLabel="Anchor">#</a> </h2>
-<p>It is a simple example of a Markdown file, containing a single paragraph.</p>
-<p>I am using <a href="https://gohugo.io/">Hugo</a> to build this site.</p>
-<p>I am using <a href="https://netlify.com/">Netlify</a> to host this site.</p>
-<p>I am using <a href="https://github.com/">GitHub</a> to manage my code.</p>
+        <p>This is the writeup for the Mr Robot CTF challenge.</p>
+<h2 id="solution">Solution<a href="#solution" class="hanchor" ariaLabel="Anchor">#</a> </h2>
+<!-- raw HTML omitted -->
+<p>First we start by enumarating the ports</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -p- -Pn -T4 &lt;IP&gt; | tee ports.txt
+</span></span></code></pre></div><p>Then we run the nmap script to find more information on the ports discovered.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nmap -sC -sV -p &lt;PORT&gt; -T4 &lt;IP&gt; | tee ports.txt
+</span></span></code></pre></div><p>It is good practice to run gobuster scan to find directories while busy enumarting the box further.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gobuster dir -u &lt;URL&gt; -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
+</span></span></code></pre></div><p>After the gobuster scan we get the following directories;</p>
+<ul>
+<li>/robots.txt</li>
+<li>/key-1-of-3.txt</li>
+<li>/wp-login.php</li>
+</ul>
+<p>There is some interesting content in the /robots.txt file.</p>
 
       </div></div>
 
@@ -173,17 +182,11 @@ I am using GitHub to manage my code.
   </div>
   <div class="pagination__buttons">
     
-      <a href="https://tariqbaater.github.io/posts/2024/bandit/" class="button inline prev">
-        Bandit
+      <a href="https://tariqbaater.github.io/posts/2024/my-first-post/" class="button inline prev">
+        My First Post
       </a>
     
     
-      ::
-    
-    
-      <a href="https://tariqbaater.github.io/posts/2024/mr-robot/" class="button inline next">
-        Mr Robot
-      </a>
     
   </div>
 </div>

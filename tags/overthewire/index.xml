@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My New Blog Site</title>
-    <link>https://tariqbaater.github.io/posts/</link>
-    <description>Recent content in Posts on My New Blog Site</description>
+    <title>Overthewire on My New Blog Site</title>
+    <link>https://tariqbaater.github.io/tags/overthewire/</link>
+    <description>Recent content in Overthewire on My New Blog Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2024 Tariq Baater. All rights reserved.</copyright>
-    <lastBuildDate>Mon, 23 Dec 2024 05:49:12 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Dec 2024 05:49:12 +0300</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/overthewire/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bandit</title>
       <link>https://tariqbaater.github.io/posts/2024/bandit/</link>
@@ -364,58 +364,6 @@ password: &lt;strong&gt;3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K&lt;/strong&gt;&lt;/p&gt
 &lt;h3 id=&#34;bandit33&#34;&gt;bandit33&lt;/h3&gt;
 &lt;p&gt;username: bandit33
 password: &lt;strong&gt;tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0&lt;/strong&gt;&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>My First Post</title>
-      <link>https://tariqbaater.github.io/posts/2024/my-first-post/</link>
-      <pubDate>Mon, 02 Dec 2024 08:19:27 +0300</pubDate>
-      
-      <guid>https://tariqbaater.github.io/posts/2024/my-first-post/</guid>
-      <description>&lt;h2 id=&#34;this-is-a-markdownhttpsdaringfireballnetprojectsmarkdown-file&#34;&gt;This is a &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt; file&lt;/h2&gt;
-&lt;p&gt;It is a simple example of a Markdown file, containing a single paragraph.&lt;/p&gt;
-&lt;p&gt;I am using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; to build this site.&lt;/p&gt;
-&lt;p&gt;I am using &lt;a href=&#34;https://netlify.com/&#34;&gt;Netlify&lt;/a&gt; to host this site.&lt;/p&gt;
-&lt;p&gt;I am using &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; to manage my code.&lt;/p&gt;</description>
-      <content>&lt;h2 id=&#34;this-is-a-markdownhttpsdaringfireballnetprojectsmarkdown-file&#34;&gt;This is a &lt;a href=&#34;https://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt; file&lt;/h2&gt;
-&lt;p&gt;It is a simple example of a Markdown file, containing a single paragraph.&lt;/p&gt;
-&lt;p&gt;I am using &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt; to build this site.&lt;/p&gt;
-&lt;p&gt;I am using &lt;a href=&#34;https://netlify.com/&#34;&gt;Netlify&lt;/a&gt; to host this site.&lt;/p&gt;
-&lt;p&gt;I am using &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; to manage my code.&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Mr Robot</title>
-      <link>https://tariqbaater.github.io/posts/2024/mr-robot/</link>
-      <pubDate>Sat, 30 Nov 2024 21:10:55 +0300</pubDate>
-      
-      <guid>https://tariqbaater.github.io/posts/2024/mr-robot/</guid>
-      <description>&lt;p&gt;This is the writeup for the Mr Robot CTF challenge.&lt;/p&gt;
-&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;First we start by enumarating the ports&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -p- -Pn -T4 &amp;lt;IP&amp;gt; | tee ports.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we run the nmap script to find more information on the ports discovered.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sC -sV -p &amp;lt;PORT&amp;gt; -T4 &amp;lt;IP&amp;gt; | tee ports.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It is good practice to run gobuster scan to find directories while busy enumarting the box further.&lt;/p&gt;</description>
-      <content>&lt;p&gt;This is the writeup for the Mr Robot CTF challenge.&lt;/p&gt;
-&lt;h2 id=&#34;solution&#34;&gt;Solution&lt;/h2&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;First we start by enumarating the ports&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -p- -Pn -T4 &amp;lt;IP&amp;gt; | tee ports.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then we run the nmap script to find more information on the ports discovered.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nmap -sC -sV -p &amp;lt;PORT&amp;gt; -T4 &amp;lt;IP&amp;gt; | tee ports.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;It is good practice to run gobuster scan to find directories while busy enumarting the box further.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gobuster dir -u &amp;lt;URL&amp;gt; -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After the gobuster scan we get the following directories;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;/robots.txt&lt;/li&gt;
-&lt;li&gt;/key-1-of-3.txt&lt;/li&gt;
-&lt;li&gt;/wp-login.php&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;There is some interesting content in the /robots.txt file.&lt;/p&gt;
 </content>
     </item>
     
