@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twariq Abubakar — Retail Operations Leader</title>
+  <meta name="description" content="Retail leader with 15+ years of experience in store management, inventory control, and FMCG operations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --accent: #e94560;
+      --accent-light: #ff6b81;
+      --bg: #0f0f1a;
+      --bg-card: #16213e;
+      --bg-card-hover: #1a2744;
+      --text: #eaeaea;
+      --text-muted: #a0a0b8;
+      --border: #2a2a4a;
+      --gradient: linear-gradient(135deg, #e94560, #0f3460);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0f3460 0%, #1a1a2e 50%, #16213e 100%);
+      padding: 80px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(233,69,96,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .hero-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-placeholder {
+      width: 160px;
+      height: 160px;
+      min-width: 160px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 3px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: var(--accent);
+      box-shadow: 0 0 40px rgba(233,69,96,0.15);
+    }
+
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #fff, #ccc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-text .tagline {
+      font-size: 1.15rem;
+      color: var(--accent-light);
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .hero-text .location {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-text .location a {
+      color: var(--accent-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .hero-text .location a:hover {
+      color: #fff;
+    }
+
+    /* Contact Bar */
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .contact-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    .contact-bar a:hover {
+      background: rgba(233,69,96,0.15);
+      border-color: var(--accent);
+    }
+
+    /* Summary */
+    .summary {
+      padding: 50px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .summary p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      line-height: 1.9;
+    }
+
+    /* Sections */
+    .section {
+      padding: 50px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 28px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    /* Experience Cards */
+    .exp-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      margin-bottom: 20px;
+      transition: all 0.3s;
+    }
+
+    .exp-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(233,69,96,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .exp-role {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .exp-company {
+      color: var(--accent-light);
+      font-weight: 500;
+    }
+
+    .exp-date {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.05);
+      padding: 4px 12px;
+      border-radius: 16px;
+      white-space: nowrap;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .exp-bullets li {
+      padding: 4px 0 4px 20px;
+      position: relative;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .exp-bullets li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-group {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: all 0.3s;
+    }
+
+    .skill-group:hover {
+      border-color: rgba(233,69,96,0.3);
+    }
+
+    .skill-group h3 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-light);
+      margin-bottom: 12px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-tag {
+      padding: 6px 14px;
+      background: rgba(233,69,96,0.1);
+      border: 1px solid rgba(233,69,96,0.2);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .edu-year {
+      font-size: 0.85rem;
+      color: var(--accent-light);
+      min-width: 90px;
+      font-weight: 500;
+    }
+
+    .edu-details h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .edu-details p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: var(--accent-light);
+      text-decoration: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .hero { padding: 50px 0 40px; }
+      .hero-content { flex-direction: column; text-align: center; gap: 24px; }
+      .photo-placeholder { width: 120px; height: 120px; min-width: 120px; font-size: 36px; }
+      .hero-text h1 { font-size: 2rem; }
+      .contact-bar { justify-content: center; }
+      .exp-header { flex-direction: column; }
+      .section-title { font-size: 1.5rem; }
+    }
+
+    /* Print Button */
+    .print-btn {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(233,69,96,0.4);
+      transition: all 0.2s;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-btn:hover {
+      background: var(--accent-light);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(233,69,96,0.5);
+    }
+
+    /* Print — ultra-compact 2-page PDF */
+    @media print {
+      @page {
+        size: A4;
+        margin: 8mm 10mm;
+      }
+
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+
+      body {
+        background: #fff !important;
+        color: #1a1a1a !important;
+        font-size: 7.5pt !important;
+        line-height: 1.25 !important;
+      }
+
+      .print-btn { display: none !important; }
+      .footer { display: none !important; }
+
+      .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+
+      /* Hero — single line header, no photo */
+      .hero {
+        background: none !important;
+        padding: 0 0 3px !important;
+        border-bottom: 2px solid #e94560;
+        margin-bottom: 0 !important;
+      }
+      .hero::before { display: none !important; }
+
+      .photo-placeholder { display: none !important; }
+
+      .hero-content {
+        gap: 0 !important;
+      }
+
+      .hero-text h1 {
+        font-size: 15pt !important;
+        background: none !important;
+        -webkit-text-fill-color: #1a1a1a !important;
+        margin-bottom: 1px !important;
+      }
+      .hero-text .tagline {
+        font-size: 8pt !important;
+        color: #e94560 !important;
+        margin-bottom: 2px !important;
+      }
+      .hero-text .location {
+        font-size: 7.5pt !important;
+        color: #555 !important;
+      }
+
+      .contact-bar {
+        margin-top: 3px !important;
+        gap: 4px !important;
+      }
+      .contact-bar a {
+        padding: 1px 6px !important;
+        font-size: 7pt !important;
+        border: 1px solid #ccc !important;
+        background: none !important;
+        color: #333 !important;
+        border-radius: 8px !important;
+      }
+
+      /* Summary */
+      .summary {
+        padding: 3px 0 2px !important;
+        border-bottom: 1px solid #ddd !important;
+        margin: 0 !important;
+      }
+      .summary p {
+        font-size: 7.5pt !important;
+        color: #444 !important;
+        line-height: 1.25 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      /* Sections */
+      .section {
+        padding: 3px 0 1px !important;
+        border-bottom: 1px solid #ddd !important;
+        margin: 0 !important;
+      }
+
+      .section-title {
+        font-size: 10pt !important;
+        margin-bottom: 3px !important;
+        gap: 4px !important;
+      }
+      .section-title::before {
+        width: 3px !important;
+        height: 12px !important;
+        background: #e94560 !important;
+      }
+
+      /* Experience */
+      .exp-card {
+        background: none !important;
+        border: none !important;
+        border-left: 2px solid #e5e5e5 !important;
+        border-radius: 0 !important;
+        padding: 1px 0 1px 10px !important;
+        margin-bottom: 3px !important;
+      }
+      .exp-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+      }
+      .exp-header {
+        margin-bottom: 1px !important;
+      }
+      .exp-role {
+        font-size: 8pt !important;
+        color: #1a1a1a !important;
+      }
+      .exp-company {
+        font-size: 7pt !important;
+        color: #e94560 !important;
+      }
+      .exp-date {
+        font-size: 7pt !important;
+        background: none !important;
+        color: #777 !important;
+        padding: 0 !important;
+      }
+      .exp-bullets li {
+        font-size: 7pt !important;
+        color: #444 !important;
+        padding: 0 0 0 12px !important;
+        line-height: 1.25 !important;
+      }
+      .exp-bullets li::before {
+        color: #e94560 !important;
+        font-size: 8pt !important;
+      }
+
+      /* Skills — inline, no cards */
+      .skills-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 2px 12px !important;
+      }
+      .skill-group {
+        background: none !important;
+        border: none !important;
+        padding: 1px 0 !important;
+        border-radius: 0 !important;
+      }
+      .skill-group h3 {
+        font-size: 7pt !important;
+        margin-bottom: 2px !important;
+        color: #e94560 !important;
+      }
+      .skill-tags { gap: 2px !important; }
+      .skill-tag {
+        padding: 0px 5px !important;
+        font-size: 6.5pt !important;
+        background: #f5f5f5 !important;
+        border: 1px solid #ddd !important;
+        color: #333 !important;
+        border-radius: 6px !important;
+      }
+
+      /* Education — compact */
+      .edu-item {
+        background: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 1px 0 !important;
+        margin-bottom: 1px !important;
+        gap: 8px !important;
+      }
+      .edu-year {
+        font-size: 7pt !important;
+        color: #e94560 !important;
+        min-width: 60px !important;
+      }
+      .edu-details h3 {
+        font-size: 7.5pt !important;
+        color: #1a1a1a !important;
+        margin-bottom: 0 !important;
+      }
+      .edu-details p {
+        font-size: 7pt !important;
+        color: #666 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="photo-placeholder" id="profilePhoto">
+          <img src="photo.jpg" alt="Twariq Abubakar" style="width:100%;height:100%;object-fit:cover;border-radius:50%">
+        </div>
+        <div class="hero-text">
+          <h1>Twariq Abubakar</h1>
+          <div class="tagline">Retail Operations Leader · 15+ Years</div>
+          <div class="location">
+            📍 Riyadh, Saudi Arabia &nbsp;·&nbsp;
+            📞 0553983841
+          </div>
+          <div class="contact-bar">
+            <a href="mailto:tariqbaater@gmail.com">✉ Email</a>
+            <a href="https://linkedin.com/in/twariq-abubakar-59b20687" target="_blank">💼 LinkedIn</a>
+            <a href="https://github.com/tariqbaater" target="_blank">💻 GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section class="summary">
+    <div class="container">
+      <p>Retail leader with 15+ years of experience in store management, inventory control, and FMCG operations. Proven expertise in driving sales, optimizing processes, and leading high-performing teams. Unique ability to combine business acumen with programming skills (Python, MySQL, Data Visualization) to deliver data-driven insights and operational efficiency. Passionate about enhancing customer experience, building collaborative teams, and innovating within the retail landscape.</p>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Department Head</div>
+            <div class="exp-company">Al Sadhan Stores — Riyadh</div>
+          </div>
+          <span class="exp-date">Jul 2024 – Present</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Oversee operations for FMCG, Frozen & Dairy, General Merchandise, and Electronics categories</li>
+          <li>Cover managerial duties as Acting General Manager during middle shifts</li>
+          <li>Lead stock accuracy management with ad-hoc cycle counts to minimize shrinkage</li>
+          <li>Manage, coach, and schedule 70+ staff to maintain productivity and service standards</li>
+          <li>Coordinate with suppliers and internal teams to ensure product availability and competitive pricing</li>
+          <li>Monitor KPIs (sales, waste, shrinkage) and implement corrective actions</li>
+          <li>Drive merchandising standards, promotional execution, and seasonal displays to maximize sales</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Store Manager</div>
+            <div class="exp-company">Dukan Retailing — Makkah</div>
+          </div>
+          <span class="exp-date">Oct 2023 – Sep 2024</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Oversaw full store operations including sales, merchandising, and inventory</li>
+          <li>Managed ERP and developed a custom stock database to improve accuracy</li>
+          <li>Trained and supervised 4 staff, enhancing efficiency and performance</li>
+          <li>Applied Python and MySQL for sales analysis, inventory optimization, and reporting</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Retail Manager (FMCG Head)</div>
+            <div class="exp-company">Panda Retail, Savola Group — Riyadh</div>
+          </div>
+          <span class="exp-date">Sep 2016 – Aug 2023</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Drove FMCG category sales through direct supplier partnerships and data analysis</li>
+          <li>Ensured high availability of key value items (KVIs)</li>
+          <li>Managed a large team to exceed sales and operational goals</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Receiving Supervisor</div>
+            <div class="exp-company">Panda Retail, Savola Group — Riyadh</div>
+          </div>
+          <span class="exp-date">Mar 2009 – Jul 2016</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Supervised goods receiving, vendor returns, and warehouse operations</li>
+          <li>Ensured compliance with SOPs and supported store stock management</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div>
+            <div class="exp-role">Data Entry Clerk</div>
+            <div class="exp-company">Auto Spares — Kenya</div>
+          </div>
+          <span class="exp-date">Feb 2008 – Feb 2009</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Processed purchase invoices, reconciliations, and data entry tasks</li>
+          <li>Maintained database accuracy and improved documentation workflows</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Retail & Operations</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">FMCG</span>
+            <span class="skill-tag">Inventory Control</span>
+            <span class="skill-tag">Shrinkage Management</span>
+            <span class="skill-tag">Supplier Relations</span>
+            <span class="skill-tag">Merchandising</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Leadership</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Team Building</span>
+            <span class="skill-tag">Staff Training</span>
+            <span class="skill-tag">Scheduling</span>
+            <span class="skill-tag">Acting GM</span>
+            <span class="skill-tag">KPI Management</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Data & Technology</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">ERP Systems</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">English (Fluent)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+
+      <div class="edu-item">
+        <div class="edu-year">2016 – 2017</div>
+        <div class="edu-details">
+          <h3>Full Stack Web Development Certification</h3>
+          <p>freeCodeCamp</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-year">—</div>
+        <div class="edu-details">
+          <h3>Auxiliary Course in Computerized Accounting</h3>
+          <p>Yara Computer College · Volunteered as IT mentor training users on MS Office & hardware</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-year">2007 – 2008</div>
+        <div class="edu-details">
+          <h3>Information Technology (Module 1)</h3>
+          <p>Mombasa Polytechnic</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-year">2002 – 2006</div>
+        <div class="edu-details">
+          <h3>High School Certificate</h3>
+          <p>Serani Secondary School</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Print Button -->
+  <button class="print-btn" id="printBtn">🖨️ Download PDF</button>
+  <script>
+    document.getElementById('printBtn').addEventListener('touchend', function(e) {
+      e.preventDefault();
+      setTimeout(function() { window.print(); }, 100);
+    });
+    document.getElementById('printBtn').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.print();
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Twariq Abubakar · <a href="https://tariqbaater.github.io">Blog</a> · <a href="https://linkedin.com/in/twariq-abubakar-59b20687">LinkedIn</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

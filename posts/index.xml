@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Tariq Baater</title>
+    <link>https://tariqbaater.github.io/posts/</link>
+    <description>Recent content in Posts on Tariq Baater</description>
+    <generator>Hugo -- 0.146.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tariqbaater.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KSA Retail Operations: The Weekly Rhythm That Protects Margin and Customer Trust</title>
+      <link>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</guid>
+      <description>A practical KSA retail operations playbook for store and e-commerce leaders: weekly metrics, Python-driven inventory planning, and frontline leadership habits that improve availability, cost, and customer experience.</description>
+    </item>
+    <item>
+      <title>OverTheWire: Bandit Writeup</title>
+      <link>https://tariqbaater.github.io/posts/bandit-writeup/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/bandit-writeup/</guid>
+      <description>Complete walkthrough for the OverTheWire Bandit wargame — from bandit0 to bandit17</description>
+    </item>
+    <item>
+      <title>OverTheWire: Leviathan Writeup</title>
+      <link>https://tariqbaater.github.io/posts/leviathan-writeup/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/leviathan-writeup/</guid>
+      <description>Complete writeup for OverTheWire Leviathan wargame levels</description>
+    </item>
+    <item>
+      <title>Mr Robot CTF Writeup</title>
+      <link>https://tariqbaater.github.io/posts/mr-robot-writeup/</link>
+      <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/mr-robot-writeup/</guid>
+      <description>Writeup for the Mr Robot CTF challenge on TryHackMe</description>
+    </item>
+    <item>
+      <title>My First Post</title>
+      <link>https://tariqbaater.github.io/posts/my-first-post/</link>
+      <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/my-first-post/</guid>
+      <description>My first post with Hugo</description>
+    </item>
+  </channel>
+</rss>
