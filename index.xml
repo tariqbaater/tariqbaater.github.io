@@ -1,57 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Tariq Baater</title>
-    <link>https://tariqbaater.github.io/</link>
-    <description>Recent content on Tariq Baater</description>
-    <generator>Hugo -- 0.146.0</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tariqbaater.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>KSA Retail Operations: The Weekly Rhythm That Protects Margin and Customer Trust</title>
-      <link>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</link>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</guid>
-      <description>A practical KSA retail operations playbook for store and e-commerce leaders: weekly metrics, Python-driven inventory planning, and frontline leadership habits that improve availability, cost, and customer experience.</description>
-    </item>
-    <item>
-      <title>OverTheWire: Bandit Writeup</title>
-      <link>https://tariqbaater.github.io/posts/bandit-writeup/</link>
-      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://tariqbaater.github.io/posts/bandit-writeup/</guid>
-      <description>Complete walkthrough for the OverTheWire Bandit wargame — from bandit0 to bandit17</description>
-    </item>
-    <item>
-      <title>OverTheWire: Leviathan Writeup</title>
-      <link>https://tariqbaater.github.io/posts/leviathan-writeup/</link>
-      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://tariqbaater.github.io/posts/leviathan-writeup/</guid>
-      <description>Complete writeup for OverTheWire Leviathan wargame levels</description>
-    </item>
-    <item>
-      <title>Mr Robot CTF Writeup</title>
-      <link>https://tariqbaater.github.io/posts/mr-robot-writeup/</link>
-      <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://tariqbaater.github.io/posts/mr-robot-writeup/</guid>
-      <description>Writeup for the Mr Robot CTF challenge on TryHackMe</description>
-    </item>
-    <item>
-      <title>My First Post</title>
-      <link>https://tariqbaater.github.io/posts/my-first-post/</link>
-      <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>https://tariqbaater.github.io/posts/my-first-post/</guid>
-      <description>My first post with Hugo</description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>https://tariqbaater.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://tariqbaater.github.io/about/</guid>
-      <description>&lt;h2 id=&#34;about-me&#34;&gt;About Me&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Tariq Baater</title><link>https://tariqbaater.github.io/</link><description>Recent content on Tariq Baater</description><generator>Hugo -- 0.156.0</generator><language>en-us</language><lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tariqbaater.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Dark Store Logistics: Optimizing Last-Mile Fulfillment for Modern Retail</title><link>https://tariqbaater.github.io/posts/dark-store-logistics-last-mile-fulfillment/</link><pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/dark-store-logistics-last-mile-fulfillment/</guid><description>Master the operational intricacies of dark store logistics. Learn proven strategies for optimizing last-mile fulfillment, reducing costs, and improving delivery performance in modern retail operations.</description></item><item><title>KSA Retail Operations: The Weekly Rhythm That Protects Margin and Customer Trust</title><link>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</link><pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</guid><description>A practical KSA retail operations playbook for store and e-commerce leaders: weekly metrics, Python-driven inventory planning, and frontline leadership habits that improve availability, cost, and customer experience.</description></item><item><title>OverTheWire: Bandit Writeup</title><link>https://tariqbaater.github.io/posts/bandit-writeup/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/bandit-writeup/</guid><description>Complete walkthrough for the OverTheWire Bandit wargame — from bandit0 to bandit17</description></item><item><title>OverTheWire: Leviathan Writeup</title><link>https://tariqbaater.github.io/posts/leviathan-writeup/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/leviathan-writeup/</guid><description>Complete writeup for OverTheWire Leviathan wargame levels</description></item><item><title>Mr Robot CTF Writeup</title><link>https://tariqbaater.github.io/posts/mr-robot-writeup/</link><pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/mr-robot-writeup/</guid><description>Writeup for the Mr Robot CTF challenge on TryHackMe</description></item><item><title>My First Post</title><link>https://tariqbaater.github.io/posts/my-first-post/</link><pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/my-first-post/</guid><description>My first post with Hugo</description></item><item><title>About</title><link>https://tariqbaater.github.io/about/</link><pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/about/</guid><description>&lt;h2 id="about-me"&gt;About Me&lt;/h2&gt;
 &lt;p&gt;I&amp;rsquo;m &lt;strong&gt;Tariq Abubakar&lt;/strong&gt;, a retail operations leader with over 15 years of experience driving transformation in the Saudi Arabian and GCC retail landscape. Based in &lt;strong&gt;Riyadh&lt;/strong&gt;, I&amp;rsquo;ve built my career at the intersection of data analytics, operational excellence, and people leadership.&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;what-i-do&#34;&gt;What I Do&lt;/h3&gt;
+&lt;h3 id="what-i-do"&gt;What I Do&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Retail Operations Strategy&lt;/strong&gt; — Designing and executing operational frameworks that scale, from single-store setups to enterprise multi-site rollouts across KSA.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Data-Driven Decision Making&lt;/strong&gt; — Turning raw retail data (POS, inventory, footfall, CRM) into actionable insights that move the needle on revenue and margin.&lt;/li&gt;
@@ -60,8 +10,5 @@
 &lt;li&gt;&lt;strong&gt;Team Leadership &amp;amp; Development&lt;/strong&gt; — Building high-performing teams across diverse cultural contexts, from store managers to regional directors.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;professional-background&#34;&gt;Professional Background&lt;/h3&gt;
-&lt;p&gt;Over a decade and a half in retail has taken me across various verticals — from fashion and lifestyle to electronics and grocery. I&amp;rsquo;ve worked with both international brands entering the KSA market and homegrown regional chains navigating rapid expansion.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;h3 id="professional-background"&gt;Professional Background&lt;/h3&gt;
+&lt;p&gt;Over a decade and a half in retail has taken me across various verticals — from fashion and lifestyle to electronics and grocery. I&amp;rsquo;ve worked with both international brands entering the KSA market and homegrown regional chains navigating rapid expansion.&lt;/p&gt;</description></item></channel></rss>
