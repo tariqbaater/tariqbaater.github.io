@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tariq Abubakar | Retail Technology Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-gray-900">Tariq<span class="text-blue-600">.dev</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
+            </div>
+            <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Let's Talk</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-4 py-32">
+            <div class="max-w-3xl">
+                <p class="text-blue-400 font-medium mb-4">Hello, I'm</p>
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">Tariq Abubakar</h1>
+                <p class="text-xl text-gray-300 mb-8">Retail Technology Specialist building solutions that transform how stores operate — from point of sale to inventory management.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">View My Work</a>
+                    <a href="#contact" class="border border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition">Contact Me</a>
+                </div>
+                <div class="mt-12 flex items-center gap-8 text-gray-400">
+                    <div>
+                        <p class="text-3xl font-bold text-white">15+</p>
+                        <p class="text-sm">Years Retail</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-white">2</p>
+                        <p class="text-sm">Projects</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-white">KSA</p>
+                        <p class="text-sm">Based</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-600 mb-6">
+                        I'm a <strong>Retail Operations Manager</strong> with over 15 years of experience in the Saudi Arabian retail sector. Throughout my career, I've led teams, optimized store performance, and always looked for ways to leverage technology to solve everyday retail challenges.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        My journey started as a floor associate and evolved into management roles where I realized that many retail processes could be automated and improved through custom software solutions.
+                    </p>
+                    <p class="text-lg text-gray-600">
+                        Today, I build tools for retailers — from <strong>point-of-sale systems</strong> that handle payments and receipts, to <strong>inventory management platforms</strong> that track stock in real-time. I understand the challenges retail managers face because I've lived them.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <div class="text-3xl mb-2">💳</div>
+                        <h3 class="font-semibold text-lg mb-2">POS Systems</h3>
+                        <p class="text-gray-600 text-sm">Barcode scanning, payments, receipts, role-based access</p>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <div class="text-3xl mb-2">📦</div>
+                        <h3 class="font-semibold text-lg mb-2">Inventory</h3>
+                        <p class="text-gray-600 text-sm">Stock tracking, real-time updates, multi-location</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-xl">
+                        <div class="text-3xl mb-2">🔌</div>
+                        <h3 class="font-semibold text-lg mb-2">Integrations</h3>
+                        <p class="text-gray-600 text-sm">Thermal printers, card terminals, APIs</p>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-xl">
+                        <div class="text-3xl mb-2">☁️</div>
+                        <h3 class="font-semibold text-lg mb-2">Cloud & Local</h3>
+                        <p class="text-gray-600 text-sm">Offline mode, cloud sync, hybrid deployment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-4">Featured Projects</h2>
+            <p class="text-center text-gray-600 mb-16">Solutions built for real retail challenges</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- POS Scanner -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center">
+                        <span class="text-6xl">💳</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-gray-100 text-gray-700 text-xs font-semibold px-3 py-1 rounded-full">Tkinter</span>
+                            <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">POS Scanner</h3>
+                        <p class="text-gray-600 mb-4">
+                            A production-ready Point of Sale application with barcode scanning, cash and card payments, thermal receipt printing, role-based access control, promotions, and offline/online database operation.
+                        </p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li>✓ Barcode scanning with fuzzy search</li>
+                            <li>✓ Cash & card payment processing</li>
+                            <li>✓ ESC/POS thermal printer support</li>
+                            <li>✓ 3 roles: Cashier, Manager, Admin</li>
+                            <li>✓ Offline fallback with SQLite sync</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/tariqbaater/POS_Scanner" target="_blank" class="flex items-center gap-2 text-blue-600 font-semibold hover:underline">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                View Code
+                            </a>
+                        </div>
+                        <div class="mt-4 flex flex-col gap-2">
+                            <a href="https://youtu.be/VoIXPN1N7e4" target="_blank" class="flex items-center gap-2 text-red-600 font-semibold hover:underline">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                POS Showcase
+                            </a>
+                            <a href="https://youtu.be/CWPHogW5Jh8" target="_blank" class="flex items-center gap-2 text-red-600 font-semibold hover:underline">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                Web App
+                            </a>
+                            <a href="https://youtube.com/shorts/QmSPCnqVEXE" target="_blank" class="flex items-center gap-2 text-red-600 font-semibold hover:underline">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                                Mobile Companion
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Management App -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-sm card-hover transition-all duration-300">
+                    <div class="h-48 bg-gradient-to-br from-green-600 to-green-800 flex items-center justify-center">
+                        <span class="text-6xl">📦</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full">JavaScript</span>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Node.js</span>
+                            <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Inventory Management App</h3>
+                        <p class="text-gray-600 mb-4">
+                            A comprehensive inventory management solution designed for retail store managers. Track stock levels, manage products, handle transfers, and get real-time insights into your inventory.
+                        </p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li>✓ Real-time stock tracking</li>
+                            <li>✓ Product management with categories</li>
+                            <li>✓ Stock transfer between locations</li>
+                            <li>✓ Low stock alerts</li>
+                            <li>✓ Dashboard with analytics</li>
+                        </ul>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="https://github.com/tariqbaater/Inventory-Management-App" target="_blank" class="flex items-center gap-2 text-blue-600 font-semibold hover:underline">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                View Code
+                            </a>
+                            <a href="https://demo.tariqbaater.com" target="_blank" class="flex items-center gap-2 text-green-600 font-semibold hover:underline">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                Live Demo
+                            </a>
+                        </div>
+                        <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <p class="text-sm text-yellow-800">
+                                <strong>Demo Login:</strong> guest / password
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-6">Let's Work Together</h2>
+            <p class="text-xl text-gray-600 mb-12">
+                Have a retail challenge that needs a tech solution? I'd love to hear about your project.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <a href="mailto:tariqbaater@gmail.com" class="p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition group">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="font-semibold mb-2">Email</h3>
+                    <p class="text-gray-600 group-hover:text-blue-600">tariqbaater@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/tariq-abubakar-59b20687" target="_blank" class="p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition group">
+                    <div class="text-4xl mb-4">💼</div>
+                    <h3 class="font-semibold mb-2">LinkedIn</h3>
+                    <p class="text-gray-600 group-hover:text-blue-600">tariqbaater</p>
+                </a>
+                <a href="https://github.com/tariqbaater" target="_blank" class="p-6 bg-gray-50 rounded-xl hover:bg-blue-50 transition group">
+                    <div class="text-4xl mb-4">🐙</div>
+                    <h3 class="font-semibold mb-2">GitHub</h3>
+                    <p class="text-gray-600 group-hover:text-blue-600">tariqbaater</p>
+                </a>
+            </div>
+            <div class="mt-12 p-6 bg-blue-50 rounded-xl">
+                <p class="text-lg text-gray-700">
+                    <strong>Looking for:</strong> Store Manager, Operations Manager, or Dark Store Manager roles in Riyadh, KSA
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-xl font-bold mb-4">Tariq<span class="text-blue-500">.dev</span></p>
+            <p class="text-gray-400 mb-6">Building retail solutions that make a difference.</p>
+            <p class="text-gray-500 text-sm">© 2026 Tariq Abubakar. Built with OpenClaw.</p>
+        </div>
+    </footer>
+</body>
+</html>
