@@ -32,6 +32,8 @@ paginate = 10
   disableThemeToggle = false
   hideFooter = false
   assets = { disableHLJS = true }
+  mainSections = ["posts"]
+  showPostsOnHomePage = true
 
 [params.homeInfoParams]
   Title = "Hi, I'm Tariq 👋"
