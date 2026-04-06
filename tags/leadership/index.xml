@@ -1,1 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Leadership on Tariq Baater</title><link>https://tariqbaater.github.io/tags/leadership/</link><description>Recent content in Leadership on Tariq Baater</description><generator>Hugo -- 0.157.0</generator><language>en-us</language><lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/leadership/index.xml" rel="self" type="application/rss+xml"/><item><title>KSA Retail Operations: The Weekly Rhythm That Protects Margin and Customer Trust</title><link>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</link><pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/ksa-retail-weekly-ops-rhythm/</guid><description>A practical KSA retail operations playbook for store and e-commerce leaders: weekly metrics, Python-driven inventory planning, and frontline leadership habits that improve availability, cost, and customer experience.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Leadership on Tariq Baater</title>
+    <link>https://tariqbaater.github.io/tags/leadership/</link>
+    <description>Recent content in Leadership on Tariq Baater</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 20 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tariqbaater.github.io/tags/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>KSA Retail Operations: The Weekly Rhythm That Protects Margin and Customer Trust</title>
+      <link>https://tariqbaater.github.io/posts/2026/ksa-retail-weekly-ops-rhythm/</link>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/2026/ksa-retail-weekly-ops-rhythm/</guid>
+      <description>&lt;p&gt;In KSA retail, execution breaks down quietly before it fails loudly.
+Most teams don’t lose performance in one dramatic moment. They lose it through small weekly misses: a few key SKUs unavailable, substitutions that frustrate online shoppers, first-90-day attrition in frontline teams, and promo demand that the operation cannot fulfill.
+The lesson I keep seeing is simple: if your weekly operating rhythm is strong, your monthly P&amp;amp;L usually takes care of itself.
+This matters even more now. Across the market, operators are investing in better forecasting and replenishment systems, and customer expectations are shifting from “fast delivery” to “fast and reliable.” Speed gets attention; reliability keeps repeat business.
+Why weekly beats monthly in KSA retail#
+Monthly reporting is useful for governance. But customer experience is won on a weekly cadence:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

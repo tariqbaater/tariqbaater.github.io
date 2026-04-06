@@ -1,1 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Writeup on Tariq Baater</title><link>https://tariqbaater.github.io/tags/writeup/</link><description>Recent content in Writeup on Tariq Baater</description><generator>Hugo -- 0.157.0</generator><language>en-us</language><lastBuildDate>Mon, 23 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://tariqbaater.github.io/tags/writeup/index.xml" rel="self" type="application/rss+xml"/><item><title>OverTheWire: Bandit Writeup</title><link>https://tariqbaater.github.io/posts/bandit-writeup/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/bandit-writeup/</guid><description>Complete walkthrough for the OverTheWire Bandit wargame — from bandit0 to bandit17</description></item><item><title>OverTheWire: Leviathan Writeup</title><link>https://tariqbaater.github.io/posts/leviathan-writeup/</link><pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/leviathan-writeup/</guid><description>Complete writeup for OverTheWire Leviathan wargame levels</description></item><item><title>Mr Robot CTF Writeup</title><link>https://tariqbaater.github.io/posts/mr-robot-writeup/</link><pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate><guid>https://tariqbaater.github.io/posts/mr-robot-writeup/</guid><description>Writeup for the Mr Robot CTF challenge on TryHackMe</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Writeup on Tariq Baater</title>
+    <link>https://tariqbaater.github.io/tags/writeup/</link>
+    <description>Recent content in Writeup on Tariq Baater</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tariqbaater.github.io/tags/writeup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OverTheWire: Bandit Writeup</title>
+      <link>https://tariqbaater.github.io/posts/2024/bandit-writeup/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/2024/bandit-writeup/</guid>
+      <description>&lt;p&gt;Bandit is the best starting point for anyone new to wargames. It teaches you the Linux command line through increasingly tricky challenges. Here’s my walkthrough.
+bandit0#
+This one is easy — the password is in the readme file.
+cat readme&lt;/p&gt;
+&lt;p&gt;bandit1#
+To read files with special characters as the name, prepend ./:
+cat ./-&lt;/p&gt;
+&lt;p&gt;bandit2#
+To read files with spaces, quote the filename:
+cat &#39;spaces in this filename&#39;&lt;/p&gt;
+&lt;p&gt;bandit3#
+Use ls -la to see hidden files and directories:
+ls -la inhere/&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OverTheWire: Leviathan Writeup</title>
+      <link>https://tariqbaater.github.io/posts/2024/leviathan-writeup/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/2024/leviathan-writeup/</guid>
+      <description>&lt;p&gt;Leviathan#
+The Leviathan wargame from OverTheWire tests basic Linux privilege escalation skills. Here’s my walkthrough.
+leviathan0#
+Use grep to find the password.
+leviathan1#
+Read the binary and trace with ltrace and strings.
+leviathan2#
+If you ltrace the binary printfile you will see it’s using the access() function — which is known for a TOCTOU (Time-of-check to time-of-use) vulnerability, mostly abused using symlinks.
+Check how the binary works:
+ltrace -f ./printfile filename&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Mr Robot CTF Writeup</title>
+      <link>https://tariqbaater.github.io/posts/2024/mr-robot-writeup/</link>
+      <pubDate>Sat, 30 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/2024/mr-robot-writeup/</guid>
+      <description>&lt;p&gt;This is the writeup for the Mr Robot CTF challenge on TryHackMe.
+Solution#
+First we start by enumerating the ports:
+nmap -p- -Pn -T4 &lt;IP&gt; | tee ports.txt&lt;/p&gt;
+&lt;p&gt;Then we run the nmap script to find more information on the ports discovered:
+nmap -sC -sV -p &lt;PORT&gt; -T4 &lt;IP&gt; | tee ports.txt&lt;/p&gt;
+&lt;p&gt;It is good practice to run a gobuster scan to find directories while busy enumerating the box further:
+gobuster dir -u &lt;IP&gt; -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
