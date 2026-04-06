@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Tariq Baater</title>
+    <link>https://tariqbaater.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Tariq Baater</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 23 Dec 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://tariqbaater.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OverTheWire: Bandit Writeup</title>
+      <link>https://tariqbaater.github.io/posts/2024/bandit-writeup/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/2024/bandit-writeup/</guid>
+      <description>&lt;p&gt;Bandit is the best starting point for anyone new to wargames. It teaches you the Linux command line through increasingly tricky challenges. Here’s my walkthrough.
+bandit0#
+This one is easy — the password is in the readme file.
+cat readme&lt;/p&gt;
+&lt;p&gt;bandit1#
+To read files with special characters as the name, prepend ./:
+cat ./-&lt;/p&gt;
+&lt;p&gt;bandit2#
+To read files with spaces, quote the filename:
+cat &#39;spaces in this filename&#39;&lt;/p&gt;
+&lt;p&gt;bandit3#
+Use ls -la to see hidden files and directories:
+ls -la inhere/&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OverTheWire: Leviathan Writeup</title>
+      <link>https://tariqbaater.github.io/posts/2024/leviathan-writeup/</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://tariqbaater.github.io/posts/2024/leviathan-writeup/</guid>
+      <description>&lt;p&gt;Leviathan#
+The Leviathan wargame from OverTheWire tests basic Linux privilege escalation skills. Here’s my walkthrough.
+leviathan0#
+Use grep to find the password.
+leviathan1#
+Read the binary and trace with ltrace and strings.
+leviathan2#
+If you ltrace the binary printfile you will see it’s using the access() function — which is known for a TOCTOU (Time-of-check to time-of-use) vulnerability, mostly abused using symlinks.
+Check how the binary works:
+ltrace -f ./printfile filename&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
