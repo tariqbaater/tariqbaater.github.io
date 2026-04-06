@@ -96,8 +96,8 @@ Based in **Riyadh, Saudi Arabia** 🇸🇦
   [privacy.vimeo]
     disabled = false
     simple = true
-  [privacy.twitter]
-    disabled = false
+  [privacy.x]
+    disable = false
     enableDNT = true
     simple = true
   [privacy.instagram]
@@ -106,3 +106,6 @@ Based in **Riyadh, Saudi Arabia** 🇸🇦
   [privacy.youtube]
     disabled = false
     privacyEnhanced = true
+
+[markup.goldmark.renderer]
+  unsafe = true
