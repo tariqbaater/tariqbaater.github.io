@@ -10,8 +10,8 @@
 
 set -euo pipefail
 
-BLOG_SRC="$HOME/.openclaw/workspace/hugo-blog/my-blogs"
-DEPLOY_REPO="$HOME/.openclaw/workspace/tariqbaater.github.io"
+BLOG_SRC="$HOME/.openclaw/workspace/tariq/Blog/my-hugo-site"
+DEPLOY_REPO="$HOME/.openclaw/workspace/tariq/Blog/"
 TITLE="${1:-}"
 
 if [ -z "$TITLE" ]; then
@@ -74,13 +74,28 @@ else
 fi
 
 echo "[publish] Building Hugo site..."
-hugo --destination "$DEPLOY_REPO/posts/../" --baseURL "https://tariqbaater.github.io/" 2>&1
+if ! hugo --destination "$DEPLOY_REPO/" --baseURL "https://tariqbaater.github.io/" 2>&1; then
+  echo "[publish] ERROR: Hugo build failed. Aborting commit."
+  exit 1
+fi
+
+# Verify build output exists
+if [ ! -f "$DEPLOY_REPO/index.html" ]; then
+  echo "[publish] ERROR: Build output missing (no index.html). Aborting commit."
+  exit 1
+fi
+
+echo "[publish] Build successful. Verifying output..."
+POST_COUNT=$(find "$DEPLOY_REPO/posts" -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l | tr -d ' ')
+echo "[publish] Found $POST_COUNT published posts in output"
 
 # Commit and push
 cd "$DEPLOY_REPO"
+
+# Only stage relevant files (not .planning/, scripts/, etc.)
 git add -A
 git commit -m "blog: publish '$TITLE'" 2>/dev/null || { echo "[publish] No changes to commit"; exit 0; }
 git push origin $DEFAULT_BRANCH 2>&1
 
 echo "[publish] ✅ Published: $TITLE"
-echo "[publish] Live at: https://blog.tariqbaater.com/posts/$YEAR/$SLUG/"
+echo "[publish] Live at: https://tariqbaater.github.io/posts/$YEAR/$SLUG/"

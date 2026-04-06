@@ -1,0 +1,108 @@
+baseURL = "https://tariqbaater.github.io/"
+title = "Tariq Baater"
+theme = "PaperMod"
+defaultContentLanguage = "en"
+enableRobotsTXT = true
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+paginate = 10
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[params]
+  env = "production"
+  author = "Tariq Abubakar"
+  description = "Data-Driven Retail Operations Leader | 15+ years transforming retail in KSA and beyond"
+  keywords = ["retail operations", "retail tech", "KSA retail", "leadership", "supply chain", "data analytics", "cybersecurity"]
+  DateFormat = "January 2, 2006"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowToc = true
+  TocOpen = false
+  comments = false
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  hideFooter = false
+  assets = { disableHLJS = true }
+
+[params.homeInfoParams]
+  Title = "Hi, I'm Tariq 👋"
+  Content = """
+Welcome to my corner of the internet. I'm a **Data-Driven Retail Operations Leader** with 15+ years of experience transforming retail businesses across Saudi Arabia and the GCC region.
+
+I write about retail operations, supply chain innovation, retail tech, and the future of commerce in the KSA market — with occasional detours into cybersecurity and tech.
+
+Based in **Riyadh, Saudi Arabia** 🇸🇦
+"""
+
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/twariq-abubakar-59b20687/"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/tariqbaater"
+
+[[params.socialIcons]]
+  name = "email"
+  url = "mailto:tariqbaater@gmail.com"
+
+[[params.socialIcons]]
+  name = "rss"
+  url = "/index.xml"
+
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+    weight = 3
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 4
+  [[menu.main]]
+    identifier = "cv"
+    name = "CV"
+    url = "/cv/"
+    weight = 5
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[privacy]
+  [privacy.vimeo]
+    disabled = false
+    simple = true
+  [privacy.twitter]
+    disabled = false
+    enableDNT = true
+    simple = true
+  [privacy.instagram]
+    disabled = false
+    simple = true
+  [privacy.youtube]
+    disabled = false
+    privacyEnhanced = true

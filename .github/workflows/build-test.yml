@@ -1,0 +1,79 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'my-hugo-site/**'
+      - '!my-hugo-site/public/**'
+      - '!my-hugo-site/resources/**'
+  pull_request:
+    paths:
+      - 'my-hugo-site/**'
+      - '!my-hugo-site/public/**'
+      - '!my-hugo-site/resources/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.157.0'
+
+      - name: Build
+        run: |
+          cd my-hugo-site
+          hugo --destination ../public --minify
+
+      - name: Check links
+        run: |
+          # Check for internal broken links
+          BASE_URL="https://tariqbaater.github.io"
+          FAILED=0
+          
+          # Extract and check internal links
+          for file in public/**/*.html; do
+            # Check links to internal pages (not external)
+            grep -oP 'href="'"$BASE_URL"'/[^"#?]*' "$file" 2>/dev/null | while read -r link; do
+              path="${link#href=}"
+              path="${path#$BASE_URL}"
+              
+              # Skip anchors, query params, and root
+              [[ "$path" =~ ^/index ]] && continue
+              [[ "$path" =~ ^/posts/.*/$ ]] && continue
+              [[ "$path" =~ ^/tags/ ]] && continue
+              [[ "$path" =~ ^/categories/ ]] && continue
+              
+              if [ -n "$path" ] && [ ! -f "public$path" ] && [ ! -d "public$path" ]; then
+                echo "⚠️ Broken link in $file: $link"
+                FAILED=1
+              fi
+            done
+          done
+          
+          if [ $FAILED -eq 1 ]; then
+            exit 1
+          fi
+          echo "✓ All internal links OK"
+
+      - name: Verify output
+        run: |
+          if [ ! -f public/index.html ]; then
+            echo "ERROR: Build output missing index.html"
+            exit 1
+          fi
+          POST_COUNT=$(find public/posts -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
+          echo "✓ Build produced $POST_COUNT posts"
+          echo "✓ index.html found"
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hugo-build
+          path: public/
+          retention-days: 7
