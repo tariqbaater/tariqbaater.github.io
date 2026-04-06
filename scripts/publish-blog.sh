@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# publish-blog.sh — Publish a blog post to blog.tariqbaater.com
 #
 # Usage:
 #   publish-blog.sh "Post Title" < post-content.md
