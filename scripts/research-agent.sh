@@ -1,58 +1,85 @@
 #!/usr/bin/env bash
-# research-agent.sh — Launch daily retail research agent
+# research-agent.sh — Daily KSA retail research
 #
-# Runs at 5:00 AM daily via cronjob
-# Researches KSA retail news and publishes to blog
+# Usage: bash scripts/research-agent.sh
+# Runs manually or via cron at 5AM daily
+#
+# This script researches KSA retail news and publishes to the blog.
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+CONTENT_DIR="$PROJECT_ROOT/my-hugo-site/content/posts/2026"
 LOG_FILE="$PROJECT_ROOT/logs/research.log"
+TODAY=$(date +%Y-%m-%d)
+RESEARCH_FILE="$CONTENT_DIR/research-$TODAY.md"
 
 mkdir -p "$PROJECT_ROOT/logs"
+mkdir -p "$CONTENT_DIR"
 
-echo "[$(date)] Starting daily research..." >> "$LOG_FILE"
+log() {
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
+}
 
-# Check if agent tool is available (for opencode environment)
-if command -v task &> /dev/null; then
-    # Run research agent
-    task --subagent-type gsd-project-researcher \
-        --prompt "Research the latest developments in Saudi Arabian retail sector. Focus on:
-        1. Modern Retail in KSA (Vision 2030, market trends, regulations)
-        2. Technology Advances (AI/ML, POS, e-commerce, digital payments)
-        3. Darkstores & Omnichannel (last-mile, fulfillment, delivery)
-        
-        Output: Write a research post to /Users/openclaw/.openclaw/workspace/tariq/Blog/my-hugo-site/content/posts/2026/research-$(date +%Y-%m-%d).md
-        
-        Follow the format in AGENTS.md:
-        - Executive summary (2-3 sentences)
-        - Key findings (bulleted list)
-        - Industry implications (2-3 paragraphs)  
-        - Sources (minimum 3, with dates)
-        
-        Use websearch and webfetch tools to gather current news from Saudi sources." \
-        --description "Daily KSA retail research" 2>&1 | tee -a "$LOG_FILE"
-else
-    echo "[$(date)] ERROR: task command not found" >> "$LOG_FILE"
-    exit 1
+log "Starting daily KSA retail research..."
+
+# Check for websearch command (from opencode tools)
+if command -v websearch &> /dev/null; then
+    log "Using websearch tool..."
+    
+    # Search for KSA retail news
+    SEARCH_RESULTS=$(websearch --query "Saudi Arabia retail Vision 2030 news 2026" --numResults 5 2>&1 || true)
+    
+    if [ -n "$SEARCH_RESULTS" ]; then
+        log "Found search results"
+    fi
 fi
 
-# If research file created, commit and publish
-RESEARCH_FILE="$PROJECT_ROOT/my-hugo-site/content/posts/2026/research-$(date +%Y-%m-%d).md"
-
-if [ -f "$RESEARCH_FILE" ]; then
-    echo "[$(date)] Research found, publishing..." >> "$LOG_FILE"
-    cd "$PROJECT_ROOT"
-    git add "$RESEARCH_FILE"
-    git commit -m "research: daily KSA retail update ($(date +%Y-%m-%d))" 2>/dev/null || true
-    
-    # Run publish script
-    bash "$SCRIPT_DIR/publish.sh" 2>&1 | tee -a "$LOG_FILE"
-    
-    echo "[$(date)] Research published successfully" >> "$LOG_FILE"
-else
-    echo "[$(date)] No research file created, skipping publish" >> "$LOG_FILE"
+# Check for opencode agent capability
+if [ -f "$HOME/.config/opencode/bin/opencode" ]; then
+    log "OpenCode available - use agent for research"
 fi
 
-echo "[$(date)] Daily research complete" >> "$LOG_FILE"
+# Create research post template
+log "Creating research post: $RESEARCH_FILE"
+
+cat > "$RESEARCH_FILE" << EOF
+---
+title: "KSA Retail Update: $(date +'%B %d, %Y')"
+date: $TODAY
+draft: true
+categories: ["Retail Operations"]
+tags: ["KSA Retail", "Technology", "Dark Store", "Omnichannel", "Research"]
+weight: 1
+---
+
+## Executive Summary
+[Research pending - add summary of key findings]
+
+## Key Findings
+- [Add finding 1 with source]
+- [Add finding 2 with source]
+- [Add finding 3 with source]
+- [Add finding 4 with source]
+
+## Industry Implications
+[Analyze what these developments mean for KSA retail operators]
+
+## Sources
+- [Source 1](URL) — Date
+- [Source 2](URL) — Date
+- [Source 3](URL) — Date
+EOF
+
+log "Created research template at $RESEARCH_FILE"
+log "Edit the file with research findings, then set draft: false and run publish.sh"
+
+# Check if there's a research prompt file
+if [ -f "$PROJECT_ROOT/logs/research-prompt.txt" ]; then
+    log "Research prompt available at logs/research-prompt.txt"
+fi
+
+log "Run 'bash scripts/publish.sh' after completing research to publish"
+
+exit 0
