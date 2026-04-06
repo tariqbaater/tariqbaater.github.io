@@ -1,5 +1,5 @@
 ---
-title: "Saudi Arabia&#39;s Retail Revolution: Vision 2030 in Action"
+title: "Saudi Arabia's Retail Revolution: Vision 2030 in Action"
 date: 2026-03-04
 draft: false
 categories: ["Retail Operations"]
