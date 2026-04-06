@@ -33,13 +33,19 @@ jobs:
           cd my-hugo-site
           hugo --destination ../public --minify 2>&1 || { echo "Build failed"; exit 1; }
 
+      - name: Debug - list build output
+        run: |
+          echo "=== Root of public ==="
+          ls -la public/
+          echo "=== Check index.html exists ==="
+          ls -la public/index.html || echo "index.html NOT FOUND"
+
       - name: Check links
         run: |
-          cd public
           BASE_URL="https://tariqbaater.github.io"
           FAILED=0
           
-          for file in **/*.html; do
+          for file in public/**/*.html; do
             grep -oP 'href="'"$BASE_URL"'/[^"#?]*' "$file" 2>/dev/null | while read -r link; do
               path="${link#href=}"
               path="${path#$BASE_URL}"
@@ -49,7 +55,7 @@ jobs:
               [[ "$path" =~ ^/tags/ ]] && continue
               [[ "$path" =~ ^/categories/ ]] && continue
               
-              if [ -n "$path" ] && [ ! -f "$path" ] && [ ! -d "$path" ]; then
+              if [ -n "$path" ] && [ ! -f "public$path" ] && [ ! -d "public$path" ]; then
                 echo "⚠️ Broken link in $file: $link"
                 FAILED=1
               fi
@@ -63,12 +69,11 @@ jobs:
 
       - name: Verify output
         run: |
-          cd public
-          if [ ! -f index.html ]; then
+          if [ ! -f public/index.html ]; then
             echo "ERROR: Build output missing index.html"
             exit 1
           fi
-          POST_COUNT=$(find posts -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
+          POST_COUNT=$(find public/posts -maxdepth 1 -mindepth 1 -type d 2>/dev/null | wc -l)
           echo "✓ Build produced $POST_COUNT posts"
           echo "✓ index.html found"
 
