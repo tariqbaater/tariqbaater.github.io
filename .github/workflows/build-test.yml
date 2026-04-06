@@ -22,23 +22,20 @@ jobs:
         with:
           submodules: true
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: '0.157.0'
+          extended: false
 
       - name: Build
         run: |
+          ls -la my-hugo-site/themes/
           cd my-hugo-site
           hugo --destination ../public --minify 2>&1 || { echo "Build failed"; exit 1; }
-
-      - name: Debug - list build output
-        run: |
-          echo "=== Root of public ==="
-          ls -la public/
-          echo "=== Check index.html exists ==="
-          ls -la public/index.html || echo "index.html NOT FOUND"
+          ls -la ../public/
 
       - name: Check links
         run: |
