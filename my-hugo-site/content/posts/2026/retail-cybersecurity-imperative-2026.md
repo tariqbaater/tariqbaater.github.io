@@ -2,6 +2,7 @@
 title: "The Retail Cybersecurity Imperative: Protecting Your Business in 2026"
 date: 2026-02-24
 draft: false
+categories: ["Cybersecurity"]
 tags: ["Cybersecurity", "Retail", "Business Security", "Data Protection", "POS Systems"]
 ---
 

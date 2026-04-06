@@ -26,6 +26,7 @@ paginate = 10
   ShowWordCount = false
   ShowToc = true
   TocOpen = false
+  showCategories = true
   comments = false
   defaultTheme = "auto"
   disableThemeToggle = false
@@ -65,7 +66,7 @@ Based in **Riyadh, Saudi Arabia** 🇸🇦
     url = "/"
     weight = 1
   [[menu.main]]
-    identifier = "blog"
+    identifier = "posts"
     name = "Blog"
     url = "/posts/"
     weight = 2

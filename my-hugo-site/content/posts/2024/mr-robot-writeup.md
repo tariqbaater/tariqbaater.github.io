@@ -2,6 +2,7 @@
 title: "Mr Robot CTF Writeup"
 date: 2024-11-30
 draft: false
+categories: ["Cybersecurity"]
 tags: ["Thm", "Cybersecurity", "Ctf", "Writeup"]
 ---
 

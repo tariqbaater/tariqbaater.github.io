@@ -3,8 +3,8 @@ title: "The Three Pillars Shaping KSA's Modern Retail Landscape"
 date: 2026-04-06
 draft: false
 type: article
+categories: ["Retail Operations"]
 tags: [retail, KSA]
-# NOTE TO USER: This frontmatter is structured to align with the 'paper mod' theme requirements.
 ---
 
 # The Three Pillars Shaping KSA's Modern Retail Landscape

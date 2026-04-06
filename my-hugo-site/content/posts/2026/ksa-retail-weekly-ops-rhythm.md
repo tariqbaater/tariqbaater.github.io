@@ -2,6 +2,7 @@
 title: "KSA Retail Operations: The Weekly Rhythm That Protects Margin and Customer Trust"
 date: 2026-02-20
 draft: false
+categories: ["Retail Operations"]
 tags: ["Ksa Retail", "Inventory Optimization", "Leadership", "Operations"]
 ---
 

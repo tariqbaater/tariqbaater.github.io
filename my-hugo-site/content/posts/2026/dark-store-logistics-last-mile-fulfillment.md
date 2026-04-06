@@ -2,6 +2,7 @@
 title: "Dark Store Logistics: Optimizing Last-Mile Fulfillment for Modern Retail"
 date: 2026-02-24
 draft: false
+categories: ["Retail Operations"]
 tags: ["Dark Store Logistics", "Last-Mile Optimization", "Fulfillment", "Retail Logistics", "Supply Chain Management"]
 ---
 

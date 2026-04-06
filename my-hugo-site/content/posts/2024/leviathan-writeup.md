@@ -2,6 +2,7 @@
 title: "OverTheWire: Leviathan Writeup"
 date: 2024-12-23
 draft: false
+categories: ["Cybersecurity"]
 tags: ["Cybersecurity", "Ctf", "Overthewire", "Linux", "Writeup"]
 ---
 
